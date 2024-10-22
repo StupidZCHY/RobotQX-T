@@ -1544,8 +1544,8 @@
                <rect>
                 <x>13</x>
                 <y>21</y>
-                <width>82</width>
-                <height>240</height>
+                <width>119</width>
+                <height>247</height>
                </rect>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_23">
@@ -1660,6 +1660,13 @@
                  </property>
                  <property name="text">
                   <string>急停</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="pushButton_5">
+                 <property name="text">
+                  <string>测试anan'n按钮</string>
                  </property>
                 </widget>
                </item>

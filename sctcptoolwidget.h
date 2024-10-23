@@ -61,6 +61,7 @@ private slots:
                        QByteArray totaldat ,
                        int length,
                        int mtime);
+    void DrawMapByJson(int Magnification,QByteArray dat);
     void on_pushButton_connect_clicked();
     void on_pushButton_send_clicked();
     void on_pushButton_clearInfo_clicked();
@@ -94,6 +95,10 @@ private slots:
     void on_btn_clearError_clicked();
     void on_btn_setActionNum_clicked();
 
+    void on_btn_mapAmplify_clicked();
+
+    void on_btn_mapReduce_clicked();
+
 protected:
 
 private:
@@ -115,8 +120,10 @@ private:
     QTranslator * _translator {Q_NULLPTR};
 
     QStandardItemModel *model;
+    QGraphicsScene  *CarMapscene;
 
-
+    QByteArray mapdat;
+    int magnification;
 
 };
 

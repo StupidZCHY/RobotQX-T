@@ -23,7 +23,7 @@
       <enum>QTabWidget::Triangular</enum>
      </property>
      <property name="currentIndex">
-      <number>2</number>
+      <number>4</number>
      </property>
      <widget class="QWidget" name="tab_2">
       <attribute name="title">
@@ -374,12 +374,9 @@
                  </property>
                  <layout class="QGridLayout" name="gridLayout">
                   <item row="0" column="0">
-                   <layout class="QVBoxLayout" name="verticalLayout_6" stretch="1,10">
+                   <layout class="QVBoxLayout" name="verticalLayout_22">
                     <item>
                      <layout class="QHBoxLayout" name="horizontalLayout_12">
-                      <property name="sizeConstraint">
-                       <enum>QLayout::SetDefaultConstraint</enum>
-                      </property>
                       <item>
                        <widget class="QGroupBox" name="groupBox_12">
                         <property name="minimumSize">
@@ -391,63 +388,61 @@
                         <property name="title">
                          <string/>
                         </property>
-                        <layout class="QGridLayout" name="gridLayout_12">
-                         <item row="1" column="0">
-                          <layout class="QHBoxLayout" name="horizontalLayout_14">
-                           <item>
-                            <widget class="QLabel" name="mapName">
-                             <property name="text">
-                              <string>mapName</string>
-                             </property>
-                            </widget>
-                           </item>
-                          </layout>
-                         </item>
-                         <item row="2" column="0">
-                          <layout class="QHBoxLayout" name="horizontalLayout_15">
-                           <item>
-                            <widget class="QLabel" name="mapVers">
-                             <property name="text">
-                              <string>TextLabel</string>
-                             </property>
-                            </widget>
-                           </item>
-                          </layout>
-                         </item>
-                         <item row="3" column="0">
-                          <layout class="QHBoxLayout" name="horizontalLayout_16">
-                           <item>
-                            <widget class="QLabel" name="resolution">
-                             <property name="text">
-                              <string>TextLabel</string>
-                             </property>
-                            </widget>
-                           </item>
-                          </layout>
-                         </item>
-                         <item row="4" column="0">
-                          <layout class="QHBoxLayout" name="horizontalLayout_17">
-                           <item>
-                            <widget class="QLabel" name="LandM">
-                             <property name="text">
-                              <string>TextLabel</string>
-                             </property>
-                            </widget>
-                           </item>
-                          </layout>
-                         </item>
-                         <item row="0" column="0">
-                          <layout class="QHBoxLayout" name="horizontalLayout_13">
-                           <item>
-                            <widget class="QLabel" name="mapType">
-                             <property name="text">
-                              <string>TextLabel</string>
-                             </property>
-                            </widget>
-                           </item>
-                          </layout>
-                         </item>
-                        </layout>
+                        <widget class="QWidget" name="">
+                         <layout class="QHBoxLayout" name="horizontalLayout_14">
+                          <item>
+                           <widget class="QLabel" name="mapName">
+                            <property name="text">
+                             <string>mapName</string>
+                            </property>
+                           </widget>
+                          </item>
+                         </layout>
+                        </widget>
+                        <widget class="QWidget" name="">
+                         <layout class="QHBoxLayout" name="horizontalLayout_15">
+                          <item>
+                           <widget class="QLabel" name="mapVers">
+                            <property name="text">
+                             <string>TextLabel</string>
+                            </property>
+                           </widget>
+                          </item>
+                         </layout>
+                        </widget>
+                        <widget class="QWidget" name="">
+                         <layout class="QHBoxLayout" name="horizontalLayout_16">
+                          <item>
+                           <widget class="QLabel" name="resolution">
+                            <property name="text">
+                             <string>TextLabel</string>
+                            </property>
+                           </widget>
+                          </item>
+                         </layout>
+                        </widget>
+                        <widget class="QWidget" name="">
+                         <layout class="QHBoxLayout" name="horizontalLayout_17">
+                          <item>
+                           <widget class="QLabel" name="LandM">
+                            <property name="text">
+                             <string>TextLabel</string>
+                            </property>
+                           </widget>
+                          </item>
+                         </layout>
+                        </widget>
+                        <widget class="QWidget" name="">
+                         <layout class="QHBoxLayout" name="horizontalLayout_13">
+                          <item>
+                           <widget class="QLabel" name="mapType">
+                            <property name="text">
+                             <string>TextLabel</string>
+                            </property>
+                           </widget>
+                          </item>
+                         </layout>
+                        </widget>
                        </widget>
                       </item>
                       <item>
@@ -623,146 +618,173 @@
                        </widget>
                       </item>
                       <item>
-                       <widget class="QGroupBox" name="groupBox_13">
-                        <property name="minimumSize">
-                         <size>
-                          <width>500</width>
-                          <height>100</height>
-                         </size>
-                        </property>
-                        <property name="maximumSize">
-                         <size>
-                          <width>16777215</width>
-                          <height>100</height>
-                         </size>
-                        </property>
-                        <property name="title">
-                         <string>控制</string>
-                        </property>
-                        <layout class="QGridLayout" name="gridLayout_13">
-                         <item row="1" column="0">
-                          <layout class="QHBoxLayout" name="horizontalLayout_11">
-                           <item>
-                            <widget class="QComboBox" name="cbb_1">
-                             <property name="maximumSize">
-                              <size>
-                               <width>80</width>
-                               <height>16777215</height>
-                              </size>
-                             </property>
-                            </widget>
+                       <layout class="QVBoxLayout" name="verticalLayout_6">
+                        <item>
+                         <widget class="QGroupBox" name="groupBox_13">
+                          <property name="minimumSize">
+                           <size>
+                            <width>500</width>
+                            <height>100</height>
+                           </size>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>16777215</width>
+                            <height>100</height>
+                           </size>
+                          </property>
+                          <property name="title">
+                           <string>控制</string>
+                          </property>
+                          <layout class="QGridLayout" name="gridLayout_13">
+                           <item row="1" column="0">
+                            <layout class="QHBoxLayout" name="horizontalLayout_11">
+                             <item>
+                              <widget class="QComboBox" name="cbb_1">
+                               <property name="maximumSize">
+                                <size>
+                                 <width>80</width>
+                                 <height>16777215</height>
+                                </size>
+                               </property>
+                              </widget>
+                             </item>
+                             <item>
+                              <widget class="QComboBox" name="cbb_5">
+                               <property name="maximumSize">
+                                <size>
+                                 <width>80</width>
+                                 <height>16777215</height>
+                                </size>
+                               </property>
+                              </widget>
+                             </item>
+                             <item>
+                              <widget class="QComboBox" name="cbb_2">
+                               <property name="maximumSize">
+                                <size>
+                                 <width>80</width>
+                                 <height>16777215</height>
+                                </size>
+                               </property>
+                              </widget>
+                             </item>
+                             <item>
+                              <widget class="QComboBox" name="cbb_4">
+                               <property name="maximumSize">
+                                <size>
+                                 <width>80</width>
+                                 <height>16777215</height>
+                                </size>
+                               </property>
+                              </widget>
+                             </item>
+                             <item>
+                              <widget class="QComboBox" name="cbb_3">
+                               <property name="maximumSize">
+                                <size>
+                                 <width>80</width>
+                                 <height>16777215</height>
+                                </size>
+                               </property>
+                              </widget>
+                             </item>
+                             <item>
+                              <widget class="QPushButton" name="pushButton">
+                               <property name="text">
+                                <string>发送</string>
+                               </property>
+                              </widget>
+                             </item>
+                             <item>
+                              <spacer name="horizontalSpacer_6">
+                               <property name="orientation">
+                                <enum>Qt::Horizontal</enum>
+                               </property>
+                               <property name="sizeHint" stdset="0">
+                                <size>
+                                 <width>40</width>
+                                 <height>20</height>
+                                </size>
+                               </property>
+                              </spacer>
+                             </item>
+                            </layout>
                            </item>
-                           <item>
-                            <widget class="QComboBox" name="cbb_5">
-                             <property name="maximumSize">
-                              <size>
-                               <width>80</width>
-                               <height>16777215</height>
-                              </size>
-                             </property>
-                            </widget>
-                           </item>
-                           <item>
-                            <widget class="QComboBox" name="cbb_2">
-                             <property name="maximumSize">
-                              <size>
-                               <width>80</width>
-                               <height>16777215</height>
-                              </size>
-                             </property>
-                            </widget>
-                           </item>
-                           <item>
-                            <widget class="QComboBox" name="cbb_4">
-                             <property name="maximumSize">
-                              <size>
-                               <width>80</width>
-                               <height>16777215</height>
-                              </size>
-                             </property>
-                            </widget>
-                           </item>
-                           <item>
-                            <widget class="QComboBox" name="cbb_3">
-                             <property name="maximumSize">
-                              <size>
-                               <width>80</width>
-                               <height>16777215</height>
-                              </size>
-                             </property>
-                            </widget>
-                           </item>
-                           <item>
-                            <widget class="QPushButton" name="pushButton">
-                             <property name="text">
-                              <string>发送</string>
-                             </property>
-                            </widget>
-                           </item>
-                           <item>
-                            <spacer name="horizontalSpacer_6">
+                           <item row="2" column="0">
+                            <spacer name="verticalSpacer_9">
                              <property name="orientation">
-                              <enum>Qt::Horizontal</enum>
+                              <enum>Qt::Vertical</enum>
                              </property>
                              <property name="sizeHint" stdset="0">
                               <size>
-                               <width>40</width>
-                               <height>20</height>
+                               <width>20</width>
+                               <height>40</height>
                               </size>
                              </property>
                             </spacer>
                            </item>
+                           <item row="0" column="0">
+                            <layout class="QHBoxLayout" name="horizontalLayout_10">
+                             <item>
+                              <widget class="QCheckBox" name="checkBox">
+                               <property name="text">
+                                <string>是否随动</string>
+                               </property>
+                              </widget>
+                             </item>
+                             <item>
+                              <widget class="QLabel" name="label_6">
+                               <property name="text">
+                                <string>当前位置</string>
+                               </property>
+                              </widget>
+                             </item>
+                             <item>
+                              <widget class="QComboBox" name="comboBox"/>
+                             </item>
+                             <item>
+                              <spacer name="horizontalSpacer_5">
+                               <property name="orientation">
+                                <enum>Qt::Horizontal</enum>
+                               </property>
+                               <property name="sizeHint" stdset="0">
+                                <size>
+                                 <width>40</width>
+                                 <height>20</height>
+                                </size>
+                               </property>
+                              </spacer>
+                             </item>
+                            </layout>
+                           </item>
                           </layout>
-                         </item>
-                         <item row="0" column="0">
-                          <layout class="QHBoxLayout" name="horizontalLayout_10">
-                           <item>
-                            <widget class="QCheckBox" name="checkBox">
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QGroupBox" name="groupBox_22">
+                          <property name="title">
+                           <string>GroupBox</string>
+                          </property>
+                          <layout class="QGridLayout" name="gridLayout_12">
+                           <item row="0" column="1">
+                            <widget class="QPushButton" name="btn_mapReduce">
                              <property name="text">
-                              <string>是否随动</string>
+                              <string>缩小</string>
                              </property>
                             </widget>
                            </item>
-                           <item>
-                            <widget class="QLabel" name="label_6">
+                           <item row="0" column="0">
+                            <widget class="QPushButton" name="btn_mapAmplify">
                              <property name="text">
-                              <string>当前位置</string>
+                              <string>放大</string>
                              </property>
                             </widget>
                            </item>
-                           <item>
-                            <widget class="QComboBox" name="comboBox"/>
-                           </item>
-                           <item>
-                            <spacer name="horizontalSpacer_5">
-                             <property name="orientation">
-                              <enum>Qt::Horizontal</enum>
-                             </property>
-                             <property name="sizeHint" stdset="0">
-                              <size>
-                               <width>40</width>
-                               <height>20</height>
-                              </size>
-                             </property>
-                            </spacer>
-                           </item>
                           </layout>
-                         </item>
-                         <item row="2" column="0">
-                          <spacer name="verticalSpacer_9">
-                           <property name="orientation">
-                            <enum>Qt::Vertical</enum>
-                           </property>
-                           <property name="sizeHint" stdset="0">
-                            <size>
-                             <width>20</width>
-                             <height>40</height>
-                            </size>
-                           </property>
-                          </spacer>
-                         </item>
-                        </layout>
-                       </widget>
+                         </widget>
+                        </item>
+                       </layout>
                       </item>
                      </layout>
                     </item>
@@ -3111,6 +3133,156 @@
           </layout>
          </item>
         </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_4">
+      <attribute name="title">
+       <string>参数</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_20">
+       <item row="0" column="0">
+        <layout class="QHBoxLayout" name="horizontalLayout_45" stretch="1,10">
+         <item>
+          <widget class="QTreeView" name="treeView"/>
+         </item>
+         <item>
+          <widget class="QTableView" name="tableView_3"/>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_5">
+      <attribute name="title">
+       <string>地图</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_21">
+       <item row="1" column="0">
+        <layout class="QHBoxLayout" name="horizontalLayout_46" stretch="8,2">
+         <item>
+          <widget class="QGraphicsView" name="GpV_CarMap"/>
+         </item>
+         <item>
+          <widget class="QListView" name="listView"/>
+         </item>
+        </layout>
+       </item>
+       <item row="0" column="0">
+        <widget class="QGroupBox" name="groupBox_21">
+         <property name="title">
+          <string>GroupBox</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_22">
+          <item row="1" column="5">
+           <widget class="QPushButton" name="pushButton_18">
+            <property name="text">
+             <string>曲线</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="7">
+           <widget class="QPushButton" name="pushButton_16">
+            <property name="text">
+             <string>PushButton</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QComboBox" name="comboBox_5">
+            <item>
+             <property name="text">
+              <string>直线</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>曲线</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="1" column="6">
+           <widget class="QPushButton" name="pushButton_17">
+            <property name="text">
+             <string>站点</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="10">
+           <spacer name="horizontalSpacer_7">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="label_11">
+            <property name="text">
+             <string>画线类型</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="8">
+           <widget class="QPushButton" name="pushButton_12">
+            <property name="text">
+             <string>PushButton</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="9">
+           <widget class="QPushButton" name="pushButton_11">
+            <property name="text">
+             <string>PushButton</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="4">
+           <widget class="QPushButton" name="pushButton_19">
+            <property name="text">
+             <string>直线</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="2">
+           <widget class="QLabel" name="label_13">
+            <property name="text">
+             <string>添加站点</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="3">
+           <widget class="QComboBox" name="comboBox_6">
+            <item>
+             <property name="text">
+              <string>工位点</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>充电点</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>路径点</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>待机点</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+        </widget>
        </item>
       </layout>
      </widget>

@@ -12,6 +12,9 @@
 #include <QThreadPool>
 #include "mycarconnnect.h"
 
+#include <QTreeView>
+#include <QFileSystemModel>
+
 
 #include "carmessage.h"
 using namespace std;
@@ -28,6 +31,13 @@ SCTcpToolWidget::SCTcpToolWidget(QWidget *parent) :
     ui->pushButton_send->setObjectName("pushButton_green");
     ui->pushButton_zipFile->setObjectName("pushButton_green");
 
+
+    QTreeView *treeView = new QTreeView(nullptr);
+    QFileSystemModel *fileSystemModel = new QFileSystemModel();
+    fileSystemModel->setRootPath(QDir::rootPath());
+
+    treeView->setModel(fileSystemModel);
+    treeView->setRootIndex(fileSystemModel->index(QDir::homePath()));
 
     // 创建视图
     ui->tableView->resizeColumnToContents(0);
@@ -59,6 +69,11 @@ SCTcpToolWidget::SCTcpToolWidget(QWidget *parent) :
     ui->tableView->setModel(model);
     ui->tableView->setAlternatingRowColors(true);
     ui->tableView->show();
+magnification = 20;
+
+     CarMapscene = new QGraphicsScene(0,0,1000,1000);
+     ui->GpV_CarMap->setScene(CarMapscene);
+     CarMapscene->addRect(0,0,1000,1000);
 
     //自动滚动.
     connect(ui->textEdit_info,SIGNAL(textChanged()),this,SLOT(slotAutomaticallyScroll()));
@@ -1078,28 +1093,12 @@ void SCTcpToolWidget::on_btn_mapupdate_clicked()
 {
     update();
 }
-
-void SCTcpToolWidget::on_btn_openmap_clicked()
+void SCTcpToolWidget::DrawMapByJson(int Magnification,QByteArray dat)
 {
-    QString fileName = QFileDialog::getOpenFileName(this, tr("Open File"),
-                                                    "",
-                                                    tr("Text Files (*.smap)"));
-    if (fileName.isEmpty()) {
-        QMessageBox::information(this, tr("Info"), tr("No file selected."));
-        return;
-    }
-
-    QFile file(fileName);
-    if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-        QMessageBox::critical(this, tr("Error"), tr("Cannot open file for reading."));
-        return;
-    }
-    QByteArray allData = file.readAll();
-    file.close();
     // ui->textEdit->append(QString(allData));
     QGraphicsScene  *scene;
     //json文件转换成对象
-    QJsonDocument jsonDoc(QJsonDocument::fromJson(allData));
+    QJsonDocument jsonDoc(QJsonDocument::fromJson(dat));
     QJsonObject jsonObject = jsonDoc.object();
 
     //列出json里的所有key
@@ -1108,7 +1107,7 @@ void SCTcpToolWidget::on_btn_openmap_clicked()
         qDebug()<<"key "<<i<<" is "<<keys.at(i);
 
     //放大倍率
-    int mulriple = 40;
+    int mulriple = Magnification;
 
     //根据key进行相应操作
     if(keys.contains("header"))
@@ -1130,16 +1129,14 @@ void SCTcpToolWidget::on_btn_openmap_clicked()
         QJsonObject JOB_minPos = JOB_header["minPos"].toObject();
         QJsonObject JOB_maxPos = JOB_header["maxPos"].toObject();
 
-        qreal scenePosX = JOB_minPos["x"].toDouble()*mulriple;
-        qreal scenePosY = -(JOB_minPos["y"].toDouble()*mulriple);
-        qreal sceneEdgeX = JOB_maxPos["x"].toDouble()*mulriple;
-        qreal sceneEdgeY = -(JOB_maxPos["y"].toDouble()*mulriple);
+        qreal scenePosX = JOB_minPos["x"].toDouble()*mulriple;//最小点X值
+        qreal scenePosY = -(JOB_minPos["y"].toDouble()*mulriple);   //最小点Y值
+        qreal sceneEdgeX = JOB_maxPos["x"].toDouble()*mulriple;     //最大点X
+        qreal sceneEdgeY = -(JOB_maxPos["y"].toDouble()*mulriple);  //最大点Y
 
-        qreal sceneWidth = sceneEdgeX - scenePosX;
-        qreal sceneHight = sceneEdgeY - scenePosY;
-        scene = new QGraphicsScene(scenePosX,scenePosY,sceneWidth,sceneHight);
-
-
+        qreal sceneWidth = sceneEdgeX - scenePosX;                  //图幅宽度
+        qreal sceneHight = sceneEdgeY - scenePosY;                  //图幅高度
+        scene = new QGraphicsScene(scenePosX,scenePosY,sceneWidth,sceneHight);  //创建
 
         //添加场景，并显示矩形框
         ui->graphicsView->setScene(scene);
@@ -1149,46 +1146,59 @@ void SCTcpToolWidget::on_btn_openmap_clicked()
     //显示普通点
     if(keys.contains("normalPosList"))
     {
+        //取出所有普通点
         QJsonArray posArray = jsonObject["normalPosList"].toArray();
 
         //绘制点
         for(auto i : posArray){
             QJsonObject JOB_pos = i.toObject();
+            //计算坐标
             qreal x = JOB_pos["x"].toDouble()*mulriple;
             qreal y = JOB_pos["y"].toDouble()*mulriple;
+            //根据坐标绘制一个像素点得普通电
             scene->addEllipse(x,-y,1,1);
         }
     }
-
     //显示高级点
     if(keys.contains("advancedPointList"))
     {
+        //去除所有高级点
         QJsonArray APosArray = jsonObject["advancedPointList"].toArray();
-
+        //计算共计有多少个高级点
         int AposCount = APosArray.count();
         ui->LandM->setText(QString("LandMarks Num: %1").arg(AposCount));
-
         //绘制高级点
         for(auto i : APosArray){
             QJsonObject JOB_Apos = i.toObject();
-            QString className = JOB_Apos["className"].toString();
-            QString instanceName = JOB_Apos["instanceName"].toString();
-
-            ui->comboBox_2->addItem(instanceName);
-            ui->comboBox->addItem(instanceName);
-            ui->cbb_1->addItem(instanceName);
-            ui->cbb_2->addItem(instanceName);
-            ui->cbb_3->addItem(instanceName);
-            ui->cbb_4->addItem(instanceName);
-            ui->cbb_5->addItem(instanceName);
-
-
             QJsonObject JOB_pos = JOB_Apos["pos"].toObject();
+            QString Name_pos = JOB_Apos["instanceName"].toString();
+            //获取高级点得坐标
             qreal x = JOB_pos["x"].toDouble()*mulriple;
             qreal y = JOB_pos["y"].toDouble()*mulriple;
-            QGraphicsRectItem *item_Apos = scene->addRect(x,-(y),20,20,QPen(QColor(Qt::yellow)),QBrush(QColor(Qt::blue)));
+            //绘制高级点（矩形）
+            QGraphicsRectItem *item_Apos = scene->addRect(x,
+                                                          -(y),
+                                                          20,
+                                                          20,
+                                                          QPen(QColor(Qt::yellow)),
+                                                          QBrush(QColor(Qt::blue)));
+            QGraphicsSimpleTextItem *pItem = new QGraphicsSimpleTextItem();
+            pItem->setText(Name_pos);
+            // 字体
+            QFont font = pItem->font();
+            font.setPixelSize(10);  // 像素大小
+            font.setItalic(false);  // 斜体
+            font.setUnderline(false);  // 下划线
 
-
+            pItem->setFont(font);
+            pItem->setBrush(QBrush(QColor(0, 160, 230)));
+            pItem->setX(x);
+            pItem->setY(-y);
+            // 将 item 添加至场景中
+           // QGraphicsScene *pScene = new QGraphicsScene();
+           scene->addItem(pItem);
+            // 为视图设置场景
+          //  scene->addSimpleText(Name_pos,"仿宋");
 
             //将他加入可编辑图元列表里
             //this->items_editable.append(item_Apos);
@@ -1203,6 +1213,16 @@ void SCTcpToolWidget::on_btn_openmap_clicked()
                 item_pos_dir->setRotation(angle);
                 item_pos_dir->setParentItem(item_Apos);
             }
+            QString className = JOB_Apos["className"].toString();
+            QString instanceName = JOB_Apos["instanceName"].toString();
+
+            ui->comboBox_2->addItem(instanceName);
+            ui->comboBox->addItem(instanceName);
+            ui->cbb_1->addItem(instanceName);
+            ui->cbb_2->addItem(instanceName);
+            ui->cbb_3->addItem(instanceName);
+            ui->cbb_4->addItem(instanceName);
+            ui->cbb_5->addItem(instanceName);
         }
     }
 
@@ -1240,12 +1260,32 @@ void SCTcpToolWidget::on_btn_openmap_clicked()
         }
     }
 }
+void SCTcpToolWidget::on_btn_openmap_clicked()
+{
+    //选择文件 获取文件路径
+    QString fileName = QFileDialog::getOpenFileName(this, tr("Open File"),
+                                                    "",
+                                                    tr("Text Files (*.smap)"));
+    if (fileName.isEmpty()) {
+        QMessageBox::information(this, tr("Info"), tr("No file selected."));
+        return;
+    }
+    //打开文件
+    QFile file(fileName);
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        QMessageBox::critical(this, tr("Error"), tr("Cannot open file for reading."));
+        return;
+    }
+    //读取文件所有内容
+    mapdat = file.readAll();
+    file.close();
+    DrawMapByJson(magnification,mapdat);
 
+}
 
+//查询路径设置
 void SCTcpToolWidget::on_btn_ReadLinpath_clicked()
 {
-
-
     // 填充数据
     for (int row = 0; row < 100; ++row) {
         for (int column = 0; column < 12; ++column) {
@@ -1259,9 +1299,7 @@ void SCTcpToolWidget::on_btn_ReadLinpath_clicked()
     ui->tableView->setAlternatingRowColors(true);
     ui->tableView->show();
     //ui->tableView->resizeColumnToContents();
-
 }
-
 
 QString getFileNameAndSize(const QString &filePath) {
     QFileInfo fileInfo(filePath);
@@ -1399,7 +1437,6 @@ void SCTcpToolWidget::on_btn_agvStart_clicked()
 void SCTcpToolWidget::on_btn_setES_clicked()
 {
     //报头数据类型.
-
     int number = 1;
     int sendCommand = 0x32;
     QByteArray sendData(number,0) ;
@@ -1409,7 +1446,6 @@ void SCTcpToolWidget::on_btn_setES_clicked()
 
 void SCTcpToolWidget::on_btn_clearError_clicked()
 {
-
     //报头数据类型.
     int number = 1;
     int sendCommand = 0x32;
@@ -1425,11 +1461,8 @@ void SCTcpToolWidget::on_btn_setActionNum_clicked()
     int sendCommand = 0x32;
     QByteArray sendData(number,0) ;
     sendData[0] = 0x03;
-    _carMessage->SendOneMessage(1,sendCommand, sendData,number);
-
+    _carMessage->SendOneMessage(1,sendCommand,sendData,number);
 }
-
-
 
 /** 打印信息.
  * @brief SCTcpToolWidget::slotPrintInfo
@@ -1457,3 +1490,15 @@ void SCTcpToolWidget::slotIapThreadSend(int type,
 
 }
 
+
+void SCTcpToolWidget::on_btn_mapAmplify_clicked()
+{
+    magnification+=5;
+    DrawMapByJson(magnification,mapdat);
+}
+
+void SCTcpToolWidget::on_btn_mapReduce_clicked()
+{
+    magnification-=5;
+    DrawMapByJson(magnification,mapdat);
+}

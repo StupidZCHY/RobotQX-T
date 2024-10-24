@@ -14,6 +14,26 @@
 #include "mycarconnnect.h"
 #include <QStandardItemModel>
 
+#include <QDockWidget>
+#include <QPushButton>
+#include <QTextStream>
+#include <QInputDialog>
+#include <QFileDialog>
+#include <QGraphicsItem>
+#include <QXmlStreamReader>
+#include <QXmlStreamWriter>
+#include <QDomNode>
+#include <QPrinter>
+
+#include "mbaseview.h"
+#include "mbasescene.h"
+
+#include "mtextobject.h"
+#include "mlineobject.h"
+#include "mrectobject.h"
+#include "mellipseobject.h"
+
+
 //json解析
 #include <QJsonDocument>
 #include <QJsonObject>
@@ -29,8 +49,22 @@ class SCTcpToolWidget : public QWidget
     Q_OBJECT
 
 public:
+
+
+    void itemDockWidgetInit(void);
+    void tabWidgetInit(void);
+    void xmlFileInit(QDomDocument *doc);
+    bool appendObj2Xml(QDomDocument &doc, const QString &cls, const QDomElement &new_node);
+    bool xmlIsExist(const QString &name);
     explicit SCTcpToolWidget(QWidget *parent = 0);
     ~SCTcpToolWidget();
+
+    //explicit MyPainterWidget(QWidget *parent = nullptr);
+
+    void endDraw();     //结束绘制
+    void clearPath();   //清除路径
+
+    //void paintEvent(QPaintEvent *event);
 
 public slots:
     void BtnConnectStateUpdata(QString str);
@@ -57,10 +91,10 @@ public slots:
 private slots:
     void slotPgb_IAPUp(int cnt,int num);
     void SlotRevOneMessage(bool flag ,
-                       uint8_t command,  //命令
-                       QByteArray totaldat ,
-                       int length,
-                       int mtime);
+                           uint8_t command,  //命令
+                           QByteArray totaldat ,
+                           int length,
+                           int mtime);
     void DrawMapByJson(int Magnification,QByteArray dat);
     void on_pushButton_connect_clicked();
     void on_pushButton_send_clicked();
@@ -99,10 +133,37 @@ private slots:
 
     void on_btn_mapReduce_clicked();
 
+
+    void slotBtnText(void);
+    void slotBtnLine(void);
+    void slotBtnRect(void);
+    void slotBtnEllipse(void);
+
+    void slotActNew(void);
+    void slotActOpen(void);
+    void slotActSave(void);
+    void slotActSaveAs(void);
+    void slotActPrintImage(void);
+    void slotActPrintPDF(void);
+
+    void slotActLight(void);
+    void slotActDark(void);
+
+    /* Grid */
+    void slotAct1Pixel(void);
+    void slotAct2Pixel(void);
+    void slotAct5Pixel(void);
+    void slotAct10Pixel(void);
+
+    void on_actionNew_clicked();
+
 protected:
 
+void closeEvent(QCloseEvent *event);
 private:
     Ui::SCTcpToolWidget *ui;
+
+
     //仙工单独端口测试
     SCStatusTcp *_scStatusTcp {Q_NULLPTR};
     //仙工整车端口测试
@@ -124,6 +185,14 @@ private:
 
     QByteArray mapdat;
     int magnification;
+
+    MBaseView *curView;
+
+    const QString defaultXmlPath = "./xml/";
+
+    void savePage(const QString &file);
+    void openPage();
+
 
 };
 

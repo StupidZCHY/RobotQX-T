@@ -37,7 +37,7 @@ MBaseObject::MBaseObject(QGraphicsObject *parent)
                    | QGraphicsItem::ItemIsSelectable
                    | QGraphicsItem::ItemIsFocusable);
 
-    gPen.setBrush(Qt::NoBrush);
+    gPen.setBrush(Qt::SolidPattern);
     gPen.setColor(mObjectColor);
     gPen.setWidthF(mPenWidthF);
 

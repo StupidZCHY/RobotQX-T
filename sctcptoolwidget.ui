@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1171</width>
-    <height>728</height>
+    <width>1658</width>
+    <height>1326</height>
    </rect>
   </property>
   <property name="contextMenuPolicy">
@@ -21,7 +21,7 @@
   </property>
   <layout class="QGridLayout" name="gridLayout_5">
    <item row="0" column="0">
-    <layout class="QHBoxLayout" name="horizontalLayout_13">
+    <layout class="QHBoxLayout" name="horizontalLayout_13" stretch="1,15">
      <item>
       <widget class="QDockWidget" name="dockWidget">
        <widget class="QWidget" name="dockWidgetContents">
@@ -151,13 +151,21 @@
         <enum>QTabWidget::Triangular</enum>
        </property>
        <property name="currentIndex">
-        <number>4</number>
+        <number>2</number>
        </property>
        <widget class="QWidget" name="tab_2">
         <attribute name="title">
          <string>控车</string>
         </attribute>
-        <widget class="QWidget" name="">
+        <widget class="QWidget" name="layoutWidget">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>1618</width>
+           <height>1365</height>
+          </rect>
+         </property>
          <layout class="QVBoxLayout" name="verticalLayout_4">
           <item>
            <widget class="QGroupBox" name="groupBox_6">
@@ -1379,122 +1387,293 @@
         </attribute>
         <layout class="QGridLayout" name="gridLayout_19">
          <item row="0" column="0">
-          <layout class="QVBoxLayout" name="verticalLayout_20">
-           <item>
-            <widget class="QGroupBox" name="groupBox_14">
-             <property name="title">
-              <string>连接</string>
-             </property>
-             <layout class="QGridLayout" name="gridLayout_18">
-              <item row="0" column="0">
-               <layout class="QHBoxLayout" name="horizontalLayout_24">
+          <widget class="QGroupBox" name="groupBox_14">
+           <property name="title">
+            <string>连接</string>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_18">
+            <item row="0" column="0">
+             <layout class="QHBoxLayout" name="horizontalLayout_24">
+              <item>
+               <widget class="QLabel" name="label_54">
+                <property name="text">
+                 <string>IP:</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="lineEdit_ip_3">
+                <property name="minimumSize">
+                 <size>
+                  <width>150</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>150</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>172.20.10.3</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_55">
+                <property name="text">
+                 <string>Port:</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QComboBox" name="comboBox_port_2">
+                <property name="editable">
+                 <bool>true</bool>
+                </property>
+                <property name="currentText">
+                 <string>8080</string>
+                </property>
                 <item>
-                 <widget class="QLabel" name="label_54">
-                  <property name="text">
-                   <string>IP:</string>
-                  </property>
-                 </widget>
+                 <property name="text">
+                  <string>8080</string>
+                 </property>
                 </item>
                 <item>
-                 <widget class="QLineEdit" name="lineEdit_ip_3">
+                 <property name="text">
+                  <string>19204</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>19205</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>19206</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>19207</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>19208</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>19209</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>19210</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>19200</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="btn_connectcarM">
+                <property name="text">
+                 <string>连接小车</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="horizontalSpacer_14">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <layout class="QHBoxLayout" name="horizontalLayout_14" stretch="3,6,5">
+           <item>
+            <widget class="QGroupBox" name="groupBox_20">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="title">
+              <string>状态监控</string>
+             </property>
+             <layout class="QGridLayout" name="gridLayout_17">
+              <item row="2" column="0">
+               <layout class="QVBoxLayout" name="verticalLayout_10">
+                <item>
+                 <widget class="QLabel" name="label_34">
                   <property name="minimumSize">
                    <size>
-                    <width>150</width>
+                    <width>200</width>
                     <height>0</height>
                    </size>
                   </property>
-                  <property name="maximumSize">
+                  <property name="text">
+                   <string>马达1电流：</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="label_35">
+                  <property name="text">
+                   <string>马达2电流：</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="label_36">
+                  <property name="text">
+                   <string>马达3电流：</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="label_37">
+                  <property name="text">
+                   <string>马达4电流：</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item row="3" column="0">
+               <layout class="QVBoxLayout" name="verticalLayout_9">
+                <item>
+                 <widget class="QLabel" name="label_22">
+                  <property name="minimumSize">
                    <size>
-                    <width>150</width>
-                    <height>16777215</height>
+                    <width>200</width>
+                    <height>0</height>
                    </size>
                   </property>
                   <property name="text">
-                   <string>172.20.10.3</string>
+                   <string>马达1速度：</string>
                   </property>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLabel" name="label_55">
+                 <widget class="QLabel" name="label_23">
                   <property name="text">
-                   <string>Port:</string>
+                   <string>马达2速度：</string>
                   </property>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QComboBox" name="comboBox_port_2">
-                  <property name="editable">
-                   <bool>true</bool>
-                  </property>
-                  <property name="currentText">
-                   <string>8080</string>
-                  </property>
-                  <item>
-                   <property name="text">
-                    <string>8080</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string>19204</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string>19205</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string>19206</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string>19207</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string>19208</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string>19209</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string>19210</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string>19200</string>
-                   </property>
-                  </item>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QPushButton" name="btn_connectcarM">
+                 <widget class="QLabel" name="label_32">
                   <property name="text">
-                   <string>连接小车</string>
+                   <string>马达3速度：</string>
                   </property>
                  </widget>
                 </item>
                 <item>
-                 <spacer name="horizontalSpacer_14">
-                  <property name="orientation">
-                   <enum>Qt::Horizontal</enum>
+                 <widget class="QLabel" name="label_33">
+                  <property name="text">
+                   <string>马达4速度：</string>
                   </property>
-                  <property name="sizeHint" stdset="0">
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item row="0" column="0" rowspan="2">
+               <layout class="QVBoxLayout" name="verticalLayout_17">
+                <item>
+                 <widget class="QCheckBox" name="chb_AutoRwParam">
+                  <property name="text">
+                   <string>监控小车状态</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="lab_carstates">
+                  <property name="minimumSize">
                    <size>
-                    <width>40</width>
-                    <height>20</height>
+                    <width>200</width>
+                    <height>0</height>
                    </size>
                   </property>
-                 </spacer>
+                  <property name="text">
+                   <string>运行状态：</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="lab_carcurrentpos">
+                  <property name="text">
+                   <string>当前卡号：</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="lab_cartraffc">
+                  <property name="text">
+                   <string>交管：</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="lab_targetpos">
+                  <property name="text">
+                   <string>目标卡号：</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="lab_carvoltage">
+                  <property name="text">
+                   <string>电压：</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="lab_carcurrent">
+                  <property name="text">
+                   <string>电流：</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="lab_carspeed">
+                  <property name="text">
+                   <string>速度：</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="label_17">
+                  <property name="text">
+                   <string>充电：</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="lab_rundir">
+                  <property name="text">
+                   <string>运行方向：</string>
+                  </property>
+                 </widget>
                 </item>
                </layout>
               </item>
@@ -1502,172 +1681,983 @@
             </widget>
            </item>
            <item>
-            <layout class="QHBoxLayout" name="horizontalLayout_32" stretch="1,3,1,2">
+            <layout class="QVBoxLayout" name="verticalLayout_5">
              <item>
-              <widget class="QGroupBox" name="groupBox_20">
-               <property name="maximumSize">
-                <size>
-                 <width>16777215</width>
-                 <height>16777215</height>
-                </size>
-               </property>
+              <widget class="QGroupBox" name="groupBox_18">
                <property name="title">
-                <string>状态监控</string>
+                <string>IO监控</string>
                </property>
-               <layout class="QGridLayout" name="gridLayout_17">
-                <item row="2" column="0">
-                 <layout class="QVBoxLayout" name="verticalLayout_10">
+               <layout class="QGridLayout" name="gridLayout_23">
+                <item row="0" column="0">
+                 <layout class="QVBoxLayout" name="verticalLayout_23">
                   <item>
-                   <widget class="QLabel" name="label_34">
+                   <widget class="QPushButton" name="btn_FrontStrat">
                     <property name="minimumSize">
                      <size>
-                      <width>200</width>
-                      <height>0</height>
+                      <width>80</width>
+                      <height>28</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>80</width>
+                      <height>16777215</height>
                      </size>
                     </property>
                     <property name="text">
-                     <string>马达1电流：</string>
+                     <string>前启</string>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLabel" name="label_35">
+                   <widget class="QPushButton" name="btn_backStart">
+                    <property name="minimumSize">
+                     <size>
+                      <width>80</width>
+                      <height>28</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>80</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
                     <property name="text">
-                     <string>马达2电流：</string>
+                     <string>后启</string>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLabel" name="label_36">
+                   <widget class="QPushButton" name="btn_LeftStart">
+                    <property name="minimumSize">
+                     <size>
+                      <width>80</width>
+                      <height>28</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>80</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
                     <property name="text">
-                     <string>马达3电流：</string>
+                     <string>左启</string>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLabel" name="label_37">
+                   <widget class="QPushButton" name="btn_RightStrat">
+                    <property name="minimumSize">
+                     <size>
+                      <width>80</width>
+                      <height>28</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>80</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
                     <property name="text">
-                     <string>马达4电流：</string>
+                     <string>右启</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="btn_Restar">
+                    <property name="minimumSize">
+                     <size>
+                      <width>80</width>
+                      <height>28</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>80</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string>复位</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="btn_Estop">
+                    <property name="minimumSize">
+                     <size>
+                      <width>80</width>
+                      <height>28</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>80</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string>急停</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <spacer name="verticalSpacer_3">
+                    <property name="orientation">
+                     <enum>Qt::Vertical</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>20</width>
+                      <height>40</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                 </layout>
+                </item>
+                <item row="0" column="1">
+                 <layout class="QVBoxLayout" name="verticalLayout_25">
+                  <item>
+                   <widget class="QPushButton" name="pushButton_38">
+                    <property name="minimumSize">
+                     <size>
+                      <width>96</width>
+                      <height>28</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string>驱动</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="pushButton_39">
+                    <property name="minimumSize">
+                     <size>
+                      <width>96</width>
+                      <height>28</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string>D1EN</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="pushButton_40">
+                    <property name="minimumSize">
+                     <size>
+                      <width>96</width>
+                      <height>28</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string>T2EN</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="pushButton_41">
+                    <property name="minimumSize">
+                     <size>
+                      <width>96</width>
+                      <height>28</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string>前驱动上限</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="pushButton_42">
+                    <property name="minimumSize">
+                     <size>
+                      <width>96</width>
+                      <height>28</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string>前驱动下限</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="pushButton_43">
+                    <property name="minimumSize">
+                     <size>
+                      <width>96</width>
+                      <height>28</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string>后驱动上限</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="pushButton_44">
+                    <property name="minimumSize">
+                     <size>
+                      <width>96</width>
+                      <height>28</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string>后驱动下限</string>
                     </property>
                    </widget>
                   </item>
                  </layout>
                 </item>
-                <item row="3" column="0">
-                 <layout class="QVBoxLayout" name="verticalLayout_9">
+                <item row="0" column="2">
+                 <layout class="QVBoxLayout" name="verticalLayout_24">
                   <item>
-                   <widget class="QLabel" name="label_22">
+                   <widget class="QPushButton" name="pushButton_15">
                     <property name="minimumSize">
                      <size>
-                      <width>200</width>
-                      <height>0</height>
+                      <width>95</width>
+                      <height>28</height>
                      </size>
                     </property>
                     <property name="text">
-                     <string>马达1速度：</string>
+                     <string>牵引</string>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLabel" name="label_23">
+                   <widget class="QPushButton" name="pushButton_32">
+                    <property name="minimumSize">
+                     <size>
+                      <width>95</width>
+                      <height>28</height>
+                     </size>
+                    </property>
                     <property name="text">
-                     <string>马达2速度：</string>
+                     <string>T1EN</string>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLabel" name="label_32">
+                   <widget class="QPushButton" name="pushButton_37">
+                    <property name="minimumSize">
+                     <size>
+                      <width>95</width>
+                      <height>28</height>
+                     </size>
+                    </property>
                     <property name="text">
-                     <string>马达3速度：</string>
+                     <string>T2EN</string>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLabel" name="label_33">
+                   <widget class="QPushButton" name="pushButton_33">
+                    <property name="minimumSize">
+                     <size>
+                      <width>95</width>
+                      <height>28</height>
+                     </size>
+                    </property>
                     <property name="text">
-                     <string>马达4速度：</string>
+                     <string>前牵引上限</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="pushButton_34">
+                    <property name="minimumSize">
+                     <size>
+                      <width>95</width>
+                      <height>28</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string>前牵引下限</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="pushButton_35">
+                    <property name="minimumSize">
+                     <size>
+                      <width>95</width>
+                      <height>28</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string>后牵引上限</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="pushButton_36">
+                    <property name="minimumSize">
+                     <size>
+                      <width>95</width>
+                      <height>28</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string>后牵引下限</string>
                     </property>
                    </widget>
                   </item>
                  </layout>
                 </item>
-                <item row="0" column="0" rowspan="2">
-                 <layout class="QVBoxLayout" name="verticalLayout_17">
+                <item row="0" column="3">
+                 <layout class="QVBoxLayout" name="verticalLayout_18">
                   <item>
-                   <widget class="QCheckBox" name="chb_AutoRwParam">
-                    <property name="text">
-                     <string>监控小车状态</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QLabel" name="lab_carstates">
+                   <widget class="QPushButton" name="pushButton_24">
                     <property name="minimumSize">
                      <size>
-                      <width>200</width>
-                      <height>0</height>
+                      <width>80</width>
+                      <height>28</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>80</width>
+                      <height>16777215</height>
                      </size>
                     </property>
                     <property name="text">
-                     <string>运行状态：</string>
+                     <string>F_S1</string>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLabel" name="lab_carcurrentpos">
+                   <widget class="QPushButton" name="pushButton_27">
+                    <property name="minimumSize">
+                     <size>
+                      <width>80</width>
+                      <height>28</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>80</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
                     <property name="text">
-                     <string>当前卡号：</string>
+                     <string>F_S2</string>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLabel" name="lab_cartraffc">
+                   <widget class="QPushButton" name="pushButton_22">
+                    <property name="minimumSize">
+                     <size>
+                      <width>80</width>
+                      <height>28</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>80</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
                     <property name="text">
-                     <string>交管：</string>
+                     <string>F_S3</string>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLabel" name="lab_targetpos">
+                   <widget class="QPushButton" name="pushButton_29">
+                    <property name="minimumSize">
+                     <size>
+                      <width>80</width>
+                      <height>28</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>80</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
                     <property name="text">
-                     <string>目标卡号：</string>
+                     <string>前减速</string>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLabel" name="lab_carvoltage">
+                   <widget class="QPushButton" name="pushButton_30">
+                    <property name="minimumSize">
+                     <size>
+                      <width>80</width>
+                      <height>28</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>80</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
                     <property name="text">
-                     <string>电压：</string>
+                     <string>前停车</string>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLabel" name="lab_carcurrent">
+                   <widget class="QPushButton" name="pushButton_10">
+                    <property name="minimumSize">
+                     <size>
+                      <width>80</width>
+                      <height>28</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>80</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
                     <property name="text">
-                     <string>电流：</string>
+                     <string>前撞</string>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLabel" name="lab_carspeed">
+                   <spacer name="verticalSpacer_5">
+                    <property name="orientation">
+                     <enum>Qt::Vertical</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>20</width>
+                      <height>40</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                 </layout>
+                </item>
+                <item row="0" column="4">
+                 <layout class="QVBoxLayout" name="verticalLayout_26">
+                  <item>
+                   <widget class="QPushButton" name="pushButton_23">
+                    <property name="minimumSize">
+                     <size>
+                      <width>80</width>
+                      <height>28</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>80</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
                     <property name="text">
-                     <string>速度：</string>
+                     <string>B_S1</string>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLabel" name="label_17">
+                   <widget class="QPushButton" name="pushButton_25">
+                    <property name="minimumSize">
+                     <size>
+                      <width>80</width>
+                      <height>28</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>80</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
                     <property name="text">
-                     <string>充电：</string>
+                     <string>B_S2</string>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLabel" name="lab_rundir">
+                   <widget class="QPushButton" name="pushButton_28">
+                    <property name="minimumSize">
+                     <size>
+                      <width>80</width>
+                      <height>28</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>80</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
                     <property name="text">
-                     <string>运行方向：</string>
+                     <string>B_S3</string>
                     </property>
                    </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="pushButton_31">
+                    <property name="minimumSize">
+                     <size>
+                      <width>80</width>
+                      <height>28</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>80</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string>后减速</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="pushButton_26">
+                    <property name="minimumSize">
+                     <size>
+                      <width>80</width>
+                      <height>28</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>80</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string>后停车</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="pushButton_21">
+                    <property name="minimumSize">
+                     <size>
+                      <width>80</width>
+                      <height>28</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>80</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string>后撞</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <spacer name="verticalSpacer_6">
+                    <property name="orientation">
+                     <enum>Qt::Vertical</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>20</width>
+                      <height>40</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                 </layout>
+                </item>
+                <item row="0" column="5">
+                 <layout class="QVBoxLayout" name="verticalLayout_19">
+                  <item>
+                   <widget class="QPushButton" name="pushButton_47">
+                    <property name="minimumSize">
+                     <size>
+                      <width>80</width>
+                      <height>28</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>80</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string>L_Y</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="pushButton_46">
+                    <property name="minimumSize">
+                     <size>
+                      <width>80</width>
+                      <height>28</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>80</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string>L_G</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="pushButton_45">
+                    <property name="minimumSize">
+                     <size>
+                      <width>80</width>
+                      <height>28</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>80</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string>L_R</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <spacer name="verticalSpacer_4">
+                    <property name="orientation">
+                     <enum>Qt::Vertical</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>20</width>
+                      <height>40</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                 </layout>
+                </item>
+                <item row="1" column="0" colspan="5">
+                 <layout class="QVBoxLayout" name="verticalLayout_21">
+                  <item>
+                   <layout class="QHBoxLayout" name="horizontalLayout_43">
+                    <item>
+                     <widget class="QPushButton" name="pushButton_57">
+                      <property name="minimumSize">
+                       <size>
+                        <width>50</width>
+                        <height>28</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>50</width>
+                        <height>16777215</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>DI_01</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="pushButton_61">
+                      <property name="minimumSize">
+                       <size>
+                        <width>50</width>
+                        <height>28</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>50</width>
+                        <height>16777215</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>DI_05</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="pushButton_59">
+                      <property name="minimumSize">
+                       <size>
+                        <width>50</width>
+                        <height>28</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>50</width>
+                        <height>16777215</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>DI_03</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="pushButton_60">
+                      <property name="minimumSize">
+                       <size>
+                        <width>50</width>
+                        <height>28</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>50</width>
+                        <height>16777215</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>DI_04</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="pushButton_62">
+                      <property name="minimumSize">
+                       <size>
+                        <width>50</width>
+                        <height>28</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>50</width>
+                        <height>16777215</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>DI_06</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="pushButton_63">
+                      <property name="minimumSize">
+                       <size>
+                        <width>50</width>
+                        <height>28</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>50</width>
+                        <height>16777215</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>DI_07</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="pushButton_58">
+                      <property name="minimumSize">
+                       <size>
+                        <width>50</width>
+                        <height>28</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>50</width>
+                        <height>16777215</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>DI_02</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="pushButton_56">
+                      <property name="minimumSize">
+                       <size>
+                        <width>50</width>
+                        <height>28</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>50</width>
+                        <height>16777215</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>DI_00</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                  <item>
+                   <layout class="QHBoxLayout" name="horizontalLayout_44">
+                    <item>
+                     <widget class="QPushButton" name="pushButton_51">
+                      <property name="minimumSize">
+                       <size>
+                        <width>50</width>
+                        <height>28</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>50</width>
+                        <height>16777215</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>DO_03</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="pushButton_50">
+                      <property name="minimumSize">
+                       <size>
+                        <width>50</width>
+                        <height>28</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>50</width>
+                        <height>16777215</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>DO_02</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="pushButton_49">
+                      <property name="minimumSize">
+                       <size>
+                        <width>50</width>
+                        <height>28</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>50</width>
+                        <height>16777215</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>DO_01</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="pushButton_52">
+                      <property name="minimumSize">
+                       <size>
+                        <width>50</width>
+                        <height>28</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>50</width>
+                        <height>16777215</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>DO_04</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="pushButton_53">
+                      <property name="minimumSize">
+                       <size>
+                        <width>50</width>
+                        <height>28</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>50</width>
+                        <height>16777215</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>DO_05</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="pushButton_54">
+                      <property name="minimumSize">
+                       <size>
+                        <width>50</width>
+                        <height>28</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>50</width>
+                        <height>16777215</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>DO_06</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="pushButton_55">
+                      <property name="minimumSize">
+                       <size>
+                        <width>50</width>
+                        <height>28</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>50</width>
+                        <height>16777215</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>DO_07</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="pushButton_48">
+                      <property name="minimumSize">
+                       <size>
+                        <width>50</width>
+                        <height>28</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>50</width>
+                        <height>16777215</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>DO_00</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
                   </item>
                  </layout>
                 </item>
@@ -1675,1054 +2665,74 @@
               </widget>
              </item>
              <item>
-              <widget class="QGroupBox" name="groupBox_18">
-               <property name="title">
-                <string>IO监控</string>
-               </property>
-               <widget class="QWidget" name="layoutWidget">
-                <property name="geometry">
-                 <rect>
-                  <x>13</x>
-                  <y>21</y>
-                  <width>119</width>
-                  <height>247</height>
-                 </rect>
-                </property>
-                <layout class="QVBoxLayout" name="verticalLayout_23">
-                 <item>
-                  <widget class="QPushButton" name="btn_FrontStrat">
-                   <property name="minimumSize">
-                    <size>
-                     <width>80</width>
-                     <height>28</height>
-                    </size>
-                   </property>
-                   <property name="maximumSize">
-                    <size>
-                     <width>80</width>
-                     <height>16777215</height>
-                    </size>
-                   </property>
-                   <property name="text">
-                    <string>前启</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QPushButton" name="btn_backStart">
-                   <property name="minimumSize">
-                    <size>
-                     <width>80</width>
-                     <height>28</height>
-                    </size>
-                   </property>
-                   <property name="maximumSize">
-                    <size>
-                     <width>80</width>
-                     <height>16777215</height>
-                    </size>
-                   </property>
-                   <property name="text">
-                    <string>后启</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QPushButton" name="btn_LeftStart">
-                   <property name="minimumSize">
-                    <size>
-                     <width>80</width>
-                     <height>28</height>
-                    </size>
-                   </property>
-                   <property name="maximumSize">
-                    <size>
-                     <width>80</width>
-                     <height>16777215</height>
-                    </size>
-                   </property>
-                   <property name="text">
-                    <string>左启</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QPushButton" name="btn_RightStrat">
-                   <property name="minimumSize">
-                    <size>
-                     <width>80</width>
-                     <height>28</height>
-                    </size>
-                   </property>
-                   <property name="maximumSize">
-                    <size>
-                     <width>80</width>
-                     <height>16777215</height>
-                    </size>
-                   </property>
-                   <property name="text">
-                    <string>右启</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QPushButton" name="btn_Restar">
-                   <property name="minimumSize">
-                    <size>
-                     <width>80</width>
-                     <height>28</height>
-                    </size>
-                   </property>
-                   <property name="maximumSize">
-                    <size>
-                     <width>80</width>
-                     <height>16777215</height>
-                    </size>
-                   </property>
-                   <property name="text">
-                    <string>复位</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QPushButton" name="btn_Estop">
-                   <property name="minimumSize">
-                    <size>
-                     <width>80</width>
-                     <height>28</height>
-                    </size>
-                   </property>
-                   <property name="maximumSize">
-                    <size>
-                     <width>80</width>
-                     <height>16777215</height>
-                    </size>
-                   </property>
-                   <property name="text">
-                    <string>急停</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QPushButton" name="pushButton_5">
-                   <property name="text">
-                    <string>测试anan'n按钮</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <spacer name="verticalSpacer_3">
-                   <property name="orientation">
-                    <enum>Qt::Vertical</enum>
-                   </property>
-                   <property name="sizeHint" stdset="0">
-                    <size>
-                     <width>20</width>
-                     <height>40</height>
-                    </size>
-                   </property>
-                  </spacer>
-                 </item>
-                </layout>
-               </widget>
-               <widget class="QWidget" name="layoutWidget">
-                <property name="geometry">
-                 <rect>
-                  <x>311</x>
-                  <y>21</y>
-                  <width>82</width>
-                  <height>240</height>
-                 </rect>
-                </property>
-                <layout class="QVBoxLayout" name="verticalLayout_18">
-                 <item>
-                  <widget class="QPushButton" name="pushButton_24">
-                   <property name="minimumSize">
-                    <size>
-                     <width>80</width>
-                     <height>28</height>
-                    </size>
-                   </property>
-                   <property name="maximumSize">
-                    <size>
-                     <width>80</width>
-                     <height>16777215</height>
-                    </size>
-                   </property>
-                   <property name="text">
-                    <string>F_S1</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QPushButton" name="pushButton_27">
-                   <property name="minimumSize">
-                    <size>
-                     <width>80</width>
-                     <height>28</height>
-                    </size>
-                   </property>
-                   <property name="maximumSize">
-                    <size>
-                     <width>80</width>
-                     <height>16777215</height>
-                    </size>
-                   </property>
-                   <property name="text">
-                    <string>F_S2</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QPushButton" name="pushButton_22">
-                   <property name="minimumSize">
-                    <size>
-                     <width>80</width>
-                     <height>28</height>
-                    </size>
-                   </property>
-                   <property name="maximumSize">
-                    <size>
-                     <width>80</width>
-                     <height>16777215</height>
-                    </size>
-                   </property>
-                   <property name="text">
-                    <string>F_S3</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QPushButton" name="pushButton_29">
-                   <property name="minimumSize">
-                    <size>
-                     <width>80</width>
-                     <height>28</height>
-                    </size>
-                   </property>
-                   <property name="maximumSize">
-                    <size>
-                     <width>80</width>
-                     <height>16777215</height>
-                    </size>
-                   </property>
-                   <property name="text">
-                    <string>前减速</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QPushButton" name="pushButton_30">
-                   <property name="minimumSize">
-                    <size>
-                     <width>80</width>
-                     <height>28</height>
-                    </size>
-                   </property>
-                   <property name="maximumSize">
-                    <size>
-                     <width>80</width>
-                     <height>16777215</height>
-                    </size>
-                   </property>
-                   <property name="text">
-                    <string>前停车</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QPushButton" name="pushButton_10">
-                   <property name="minimumSize">
-                    <size>
-                     <width>80</width>
-                     <height>28</height>
-                    </size>
-                   </property>
-                   <property name="maximumSize">
-                    <size>
-                     <width>80</width>
-                     <height>16777215</height>
-                    </size>
-                   </property>
-                   <property name="text">
-                    <string>前撞</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <spacer name="verticalSpacer_5">
-                   <property name="orientation">
-                    <enum>Qt::Vertical</enum>
-                   </property>
-                   <property name="sizeHint" stdset="0">
-                    <size>
-                     <width>20</width>
-                     <height>40</height>
-                    </size>
-                   </property>
-                  </spacer>
-                 </item>
-                </layout>
-               </widget>
-               <widget class="QWidget" name="layoutWidget">
-                <property name="geometry">
-                 <rect>
-                  <x>489</x>
-                  <y>21</y>
-                  <width>82</width>
-                  <height>147</height>
-                 </rect>
-                </property>
-                <layout class="QVBoxLayout" name="verticalLayout_19">
-                 <item>
-                  <widget class="QPushButton" name="pushButton_47">
-                   <property name="minimumSize">
-                    <size>
-                     <width>80</width>
-                     <height>28</height>
-                    </size>
-                   </property>
-                   <property name="maximumSize">
-                    <size>
-                     <width>80</width>
-                     <height>16777215</height>
-                    </size>
-                   </property>
-                   <property name="text">
-                    <string>L_Y</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QPushButton" name="pushButton_46">
-                   <property name="minimumSize">
-                    <size>
-                     <width>80</width>
-                     <height>28</height>
-                    </size>
-                   </property>
-                   <property name="maximumSize">
-                    <size>
-                     <width>80</width>
-                     <height>16777215</height>
-                    </size>
-                   </property>
-                   <property name="text">
-                    <string>L_G</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QPushButton" name="pushButton_45">
-                   <property name="minimumSize">
-                    <size>
-                     <width>80</width>
-                     <height>28</height>
-                    </size>
-                   </property>
-                   <property name="maximumSize">
-                    <size>
-                     <width>80</width>
-                     <height>16777215</height>
-                    </size>
-                   </property>
-                   <property name="text">
-                    <string>L_R</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <spacer name="verticalSpacer_4">
-                   <property name="orientation">
-                    <enum>Qt::Vertical</enum>
-                   </property>
-                   <property name="sizeHint" stdset="0">
-                    <size>
-                     <width>20</width>
-                     <height>40</height>
-                    </size>
-                   </property>
-                  </spacer>
-                 </item>
-                </layout>
-               </widget>
-               <widget class="QWidget" name="layoutWidget">
-                <property name="geometry">
-                 <rect>
-                  <x>102</x>
-                  <y>21</y>
-                  <width>98</width>
-                  <height>240</height>
-                 </rect>
-                </property>
-                <layout class="QVBoxLayout" name="verticalLayout_25">
-                 <item>
-                  <widget class="QPushButton" name="pushButton_38">
-                   <property name="minimumSize">
-                    <size>
-                     <width>96</width>
-                     <height>28</height>
-                    </size>
-                   </property>
-                   <property name="text">
-                    <string>驱动</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QPushButton" name="pushButton_39">
-                   <property name="minimumSize">
-                    <size>
-                     <width>96</width>
-                     <height>28</height>
-                    </size>
-                   </property>
-                   <property name="text">
-                    <string>D1EN</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QPushButton" name="pushButton_40">
-                   <property name="minimumSize">
-                    <size>
-                     <width>96</width>
-                     <height>28</height>
-                    </size>
-                   </property>
-                   <property name="text">
-                    <string>T2EN</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QPushButton" name="pushButton_41">
-                   <property name="minimumSize">
-                    <size>
-                     <width>96</width>
-                     <height>28</height>
-                    </size>
-                   </property>
-                   <property name="text">
-                    <string>前驱动上限</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QPushButton" name="pushButton_42">
-                   <property name="minimumSize">
-                    <size>
-                     <width>96</width>
-                     <height>28</height>
-                    </size>
-                   </property>
-                   <property name="text">
-                    <string>前驱动下限</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QPushButton" name="pushButton_43">
-                   <property name="minimumSize">
-                    <size>
-                     <width>96</width>
-                     <height>28</height>
-                    </size>
-                   </property>
-                   <property name="text">
-                    <string>后驱动上限</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QPushButton" name="pushButton_44">
-                   <property name="minimumSize">
-                    <size>
-                     <width>96</width>
-                     <height>28</height>
-                    </size>
-                   </property>
-                   <property name="text">
-                    <string>后驱动下限</string>
-                   </property>
-                  </widget>
-                 </item>
-                </layout>
-               </widget>
-               <widget class="QWidget" name="layoutWidget">
-                <property name="geometry">
-                 <rect>
-                  <x>207</x>
-                  <y>21</y>
-                  <width>97</width>
-                  <height>240</height>
-                 </rect>
-                </property>
-                <layout class="QVBoxLayout" name="verticalLayout_24">
-                 <item>
-                  <widget class="QPushButton" name="pushButton_15">
-                   <property name="minimumSize">
-                    <size>
-                     <width>95</width>
-                     <height>28</height>
-                    </size>
-                   </property>
-                   <property name="text">
-                    <string>牵引</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QPushButton" name="pushButton_32">
-                   <property name="minimumSize">
-                    <size>
-                     <width>95</width>
-                     <height>28</height>
-                    </size>
-                   </property>
-                   <property name="text">
-                    <string>T1EN</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QPushButton" name="pushButton_37">
-                   <property name="minimumSize">
-                    <size>
-                     <width>95</width>
-                     <height>28</height>
-                    </size>
-                   </property>
-                   <property name="text">
-                    <string>T2EN</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QPushButton" name="pushButton_33">
-                   <property name="minimumSize">
-                    <size>
-                     <width>95</width>
-                     <height>28</height>
-                    </size>
-                   </property>
-                   <property name="text">
-                    <string>前牵引上限</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QPushButton" name="pushButton_34">
-                   <property name="minimumSize">
-                    <size>
-                     <width>95</width>
-                     <height>28</height>
-                    </size>
-                   </property>
-                   <property name="text">
-                    <string>前牵引下限</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QPushButton" name="pushButton_35">
-                   <property name="minimumSize">
-                    <size>
-                     <width>95</width>
-                     <height>28</height>
-                    </size>
-                   </property>
-                   <property name="text">
-                    <string>后牵引上限</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QPushButton" name="pushButton_36">
-                   <property name="minimumSize">
-                    <size>
-                     <width>95</width>
-                     <height>28</height>
-                    </size>
-                   </property>
-                   <property name="text">
-                    <string>后牵引下限</string>
-                   </property>
-                  </widget>
-                 </item>
-                </layout>
-               </widget>
-               <widget class="QWidget" name="layoutWidget">
-                <property name="geometry">
-                 <rect>
-                  <x>400</x>
-                  <y>21</y>
-                  <width>82</width>
-                  <height>240</height>
-                 </rect>
-                </property>
-                <layout class="QVBoxLayout" name="verticalLayout_26">
-                 <item>
-                  <widget class="QPushButton" name="pushButton_23">
-                   <property name="minimumSize">
-                    <size>
-                     <width>80</width>
-                     <height>28</height>
-                    </size>
-                   </property>
-                   <property name="maximumSize">
-                    <size>
-                     <width>80</width>
-                     <height>16777215</height>
-                    </size>
-                   </property>
-                   <property name="text">
-                    <string>B_S1</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QPushButton" name="pushButton_25">
-                   <property name="minimumSize">
-                    <size>
-                     <width>80</width>
-                     <height>28</height>
-                    </size>
-                   </property>
-                   <property name="maximumSize">
-                    <size>
-                     <width>80</width>
-                     <height>16777215</height>
-                    </size>
-                   </property>
-                   <property name="text">
-                    <string>B_S2</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QPushButton" name="pushButton_28">
-                   <property name="minimumSize">
-                    <size>
-                     <width>80</width>
-                     <height>28</height>
-                    </size>
-                   </property>
-                   <property name="maximumSize">
-                    <size>
-                     <width>80</width>
-                     <height>16777215</height>
-                    </size>
-                   </property>
-                   <property name="text">
-                    <string>B_S3</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QPushButton" name="pushButton_31">
-                   <property name="minimumSize">
-                    <size>
-                     <width>80</width>
-                     <height>28</height>
-                    </size>
-                   </property>
-                   <property name="maximumSize">
-                    <size>
-                     <width>80</width>
-                     <height>16777215</height>
-                    </size>
-                   </property>
-                   <property name="text">
-                    <string>后减速</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QPushButton" name="pushButton_26">
-                   <property name="minimumSize">
-                    <size>
-                     <width>80</width>
-                     <height>28</height>
-                    </size>
-                   </property>
-                   <property name="maximumSize">
-                    <size>
-                     <width>80</width>
-                     <height>16777215</height>
-                    </size>
-                   </property>
-                   <property name="text">
-                    <string>后停车</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QPushButton" name="pushButton_21">
-                   <property name="minimumSize">
-                    <size>
-                     <width>80</width>
-                     <height>28</height>
-                    </size>
-                   </property>
-                   <property name="maximumSize">
-                    <size>
-                     <width>80</width>
-                     <height>16777215</height>
-                    </size>
-                   </property>
-                   <property name="text">
-                    <string>后撞</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <spacer name="verticalSpacer_6">
-                   <property name="orientation">
-                    <enum>Qt::Vertical</enum>
-                   </property>
-                   <property name="sizeHint" stdset="0">
-                    <size>
-                     <width>20</width>
-                     <height>40</height>
-                    </size>
-                   </property>
-                  </spacer>
-                 </item>
-                </layout>
-               </widget>
-               <widget class="QWidget" name="layoutWidget">
-                <property name="geometry">
-                 <rect>
-                  <x>10</x>
-                  <y>380</y>
-                  <width>453</width>
-                  <height>69</height>
-                 </rect>
-                </property>
-                <layout class="QVBoxLayout" name="verticalLayout_21">
-                 <item>
-                  <layout class="QHBoxLayout" name="horizontalLayout_43">
-                   <item>
-                    <widget class="QPushButton" name="pushButton_57">
-                     <property name="minimumSize">
-                      <size>
-                       <width>50</width>
-                       <height>28</height>
-                      </size>
-                     </property>
-                     <property name="maximumSize">
-                      <size>
-                       <width>50</width>
-                       <height>16777215</height>
-                      </size>
-                     </property>
-                     <property name="text">
-                      <string>DI_01</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QPushButton" name="pushButton_61">
-                     <property name="minimumSize">
-                      <size>
-                       <width>50</width>
-                       <height>28</height>
-                      </size>
-                     </property>
-                     <property name="maximumSize">
-                      <size>
-                       <width>50</width>
-                       <height>16777215</height>
-                      </size>
-                     </property>
-                     <property name="text">
-                      <string>DI_05</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QPushButton" name="pushButton_59">
-                     <property name="minimumSize">
-                      <size>
-                       <width>50</width>
-                       <height>28</height>
-                      </size>
-                     </property>
-                     <property name="maximumSize">
-                      <size>
-                       <width>50</width>
-                       <height>16777215</height>
-                      </size>
-                     </property>
-                     <property name="text">
-                      <string>DI_03</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QPushButton" name="pushButton_60">
-                     <property name="minimumSize">
-                      <size>
-                       <width>50</width>
-                       <height>28</height>
-                      </size>
-                     </property>
-                     <property name="maximumSize">
-                      <size>
-                       <width>50</width>
-                       <height>16777215</height>
-                      </size>
-                     </property>
-                     <property name="text">
-                      <string>DI_04</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QPushButton" name="pushButton_62">
-                     <property name="minimumSize">
-                      <size>
-                       <width>50</width>
-                       <height>28</height>
-                      </size>
-                     </property>
-                     <property name="maximumSize">
-                      <size>
-                       <width>50</width>
-                       <height>16777215</height>
-                      </size>
-                     </property>
-                     <property name="text">
-                      <string>DI_06</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QPushButton" name="pushButton_63">
-                     <property name="minimumSize">
-                      <size>
-                       <width>50</width>
-                       <height>28</height>
-                      </size>
-                     </property>
-                     <property name="maximumSize">
-                      <size>
-                       <width>50</width>
-                       <height>16777215</height>
-                      </size>
-                     </property>
-                     <property name="text">
-                      <string>DI_07</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QPushButton" name="pushButton_58">
-                     <property name="minimumSize">
-                      <size>
-                       <width>50</width>
-                       <height>28</height>
-                      </size>
-                     </property>
-                     <property name="maximumSize">
-                      <size>
-                       <width>50</width>
-                       <height>16777215</height>
-                      </size>
-                     </property>
-                     <property name="text">
-                      <string>DI_02</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QPushButton" name="pushButton_56">
-                     <property name="minimumSize">
-                      <size>
-                       <width>50</width>
-                       <height>28</height>
-                      </size>
-                     </property>
-                     <property name="maximumSize">
-                      <size>
-                       <width>50</width>
-                       <height>16777215</height>
-                      </size>
-                     </property>
-                     <property name="text">
-                      <string>DI_00</string>
-                     </property>
-                    </widget>
-                   </item>
-                  </layout>
-                 </item>
-                 <item>
-                  <layout class="QHBoxLayout" name="horizontalLayout_44">
-                   <item>
-                    <widget class="QPushButton" name="pushButton_51">
-                     <property name="minimumSize">
-                      <size>
-                       <width>50</width>
-                       <height>28</height>
-                      </size>
-                     </property>
-                     <property name="maximumSize">
-                      <size>
-                       <width>50</width>
-                       <height>16777215</height>
-                      </size>
-                     </property>
-                     <property name="text">
-                      <string>DO_03</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QPushButton" name="pushButton_50">
-                     <property name="minimumSize">
-                      <size>
-                       <width>50</width>
-                       <height>28</height>
-                      </size>
-                     </property>
-                     <property name="maximumSize">
-                      <size>
-                       <width>50</width>
-                       <height>16777215</height>
-                      </size>
-                     </property>
-                     <property name="text">
-                      <string>DO_02</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QPushButton" name="pushButton_49">
-                     <property name="minimumSize">
-                      <size>
-                       <width>50</width>
-                       <height>28</height>
-                      </size>
-                     </property>
-                     <property name="maximumSize">
-                      <size>
-                       <width>50</width>
-                       <height>16777215</height>
-                      </size>
-                     </property>
-                     <property name="text">
-                      <string>DO_01</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QPushButton" name="pushButton_52">
-                     <property name="minimumSize">
-                      <size>
-                       <width>50</width>
-                       <height>28</height>
-                      </size>
-                     </property>
-                     <property name="maximumSize">
-                      <size>
-                       <width>50</width>
-                       <height>16777215</height>
-                      </size>
-                     </property>
-                     <property name="text">
-                      <string>DO_04</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QPushButton" name="pushButton_53">
-                     <property name="minimumSize">
-                      <size>
-                       <width>50</width>
-                       <height>28</height>
-                      </size>
-                     </property>
-                     <property name="maximumSize">
-                      <size>
-                       <width>50</width>
-                       <height>16777215</height>
-                      </size>
-                     </property>
-                     <property name="text">
-                      <string>DO_05</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QPushButton" name="pushButton_54">
-                     <property name="minimumSize">
-                      <size>
-                       <width>50</width>
-                       <height>28</height>
-                      </size>
-                     </property>
-                     <property name="maximumSize">
-                      <size>
-                       <width>50</width>
-                       <height>16777215</height>
-                      </size>
-                     </property>
-                     <property name="text">
-                      <string>DO_06</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QPushButton" name="pushButton_55">
-                     <property name="minimumSize">
-                      <size>
-                       <width>50</width>
-                       <height>28</height>
-                      </size>
-                     </property>
-                     <property name="maximumSize">
-                      <size>
-                       <width>50</width>
-                       <height>16777215</height>
-                      </size>
-                     </property>
-                     <property name="text">
-                      <string>DO_07</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QPushButton" name="pushButton_48">
-                     <property name="minimumSize">
-                      <size>
-                       <width>50</width>
-                       <height>28</height>
-                      </size>
-                     </property>
-                     <property name="maximumSize">
-                      <size>
-                       <width>50</width>
-                       <height>16777215</height>
-                      </size>
-                     </property>
-                     <property name="text">
-                      <string>DO_00</string>
-                     </property>
-                    </widget>
-                   </item>
-                  </layout>
-                 </item>
-                </layout>
-               </widget>
-              </widget>
-             </item>
-             <item>
               <widget class="QGroupBox" name="groupBox_19">
+               <property name="minimumSize">
+                <size>
+                 <width>500</width>
+                 <height>0</height>
+                </size>
+               </property>
                <property name="title">
                 <string>手动操作</string>
                </property>
                <layout class="QGridLayout" name="gridLayout_14">
+                <item row="3" column="0" colspan="2">
+                 <layout class="QHBoxLayout" name="horizontalLayout_31">
+                  <item>
+                   <widget class="QSpinBox" name="spx_linenum"/>
+                  </item>
+                  <item>
+                   <widget class="QComboBox" name="comboBox_4">
+                    <item>
+                     <property name="text">
+                      <string>无</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>前向</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>后向</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>左向</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>右向</string>
+                     </property>
+                    </item>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="pushButton_8">
+                    <property name="text">
+                     <string>调度小车</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item row="2" column="0">
+                 <widget class="QPushButton" name="btn_setES">
+                  <property name="text">
+                   <string>设置急停</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="1">
+                 <widget class="QPushButton" name="btn_clearError">
+                  <property name="text">
+                   <string>清除错误</string>
+                  </property>
+                 </widget>
+                </item>
                 <item row="0" column="0" colspan="2">
                  <layout class="QVBoxLayout" name="verticalLayout_15">
                   <item>
@@ -2866,173 +2876,114 @@
                   </item>
                  </layout>
                 </item>
-                <item row="2" column="0">
-                 <widget class="QPushButton" name="btn_setES">
+               </layout>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="QGroupBox" name="groupBox_15">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="title">
+              <string>更新软件</string>
+             </property>
+             <layout class="QGridLayout" name="gridLayout_6">
+              <item row="0" column="0">
+               <layout class="QVBoxLayout" name="verticalLayout_16">
+                <item>
+                 <widget class="QLabel" name="lab_binname">
                   <property name="text">
-                   <string>设置急停</string>
+                   <string>文件名：</string>
                   </property>
                  </widget>
                 </item>
-                <item row="4" column="0" colspan="2">
-                 <layout class="QHBoxLayout" name="horizontalLayout_31">
+                <item>
+                 <widget class="QLabel" name="lab_binsize">
+                  <property name="text">
+                   <string>文件大小：</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_29">
                   <item>
-                   <widget class="QSpinBox" name="spx_linenum"/>
+                   <widget class="QLineEdit" name="lineEdit"/>
                   </item>
                   <item>
-                   <widget class="QComboBox" name="comboBox_4">
-                    <item>
-                     <property name="text">
-                      <string>无</string>
-                     </property>
-                    </item>
-                    <item>
-                     <property name="text">
-                      <string>前向</string>
-                     </property>
-                    </item>
-                    <item>
-                     <property name="text">
-                      <string>后向</string>
-                     </property>
-                    </item>
-                    <item>
-                     <property name="text">
-                      <string>左向</string>
-                     </property>
-                    </item>
-                    <item>
-                     <property name="text">
-                      <string>右向</string>
-                     </property>
-                    </item>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QPushButton" name="pushButton_8">
+                   <widget class="QPushButton" name="pushButton_9">
                     <property name="text">
-                     <string>PushButton</string>
+                     <string>选择文件</string>
                     </property>
                    </widget>
                   </item>
                  </layout>
                 </item>
-                <item row="5" column="1">
-                 <spacer name="verticalSpacer_10">
-                  <property name="orientation">
-                   <enum>Qt::Vertical</enum>
-                  </property>
-                  <property name="sizeHint" stdset="0">
-                   <size>
-                    <width>20</width>
-                    <height>40</height>
-                   </size>
-                  </property>
-                 </spacer>
+               </layout>
+              </item>
+              <item row="1" column="0">
+               <layout class="QVBoxLayout" name="verticalLayout_12">
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_28">
+                  <item>
+                   <widget class="QPushButton" name="btn_SendCmdIap">
+                    <property name="text">
+                     <string>刷写指令</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="btn_SendCmdIAPBegin">
+                    <property name="text">
+                     <string>刷写</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="btn_SendDataiap">
+                    <property name="text">
+                     <string>发送</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="btn_agvStart">
+                    <property name="text">
+                     <string>运行</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="btn_about">
+                    <property name="text">
+                     <string>终止</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
                 </item>
-                <item row="2" column="1">
-                 <widget class="QPushButton" name="btn_clearError">
-                  <property name="text">
-                   <string>清除错误</string>
+                <item>
+                 <widget class="QProgressBar" name="Pgb_IAP">
+                  <property name="value">
+                   <number>0</number>
                   </property>
                  </widget>
                 </item>
                </layout>
-              </widget>
-             </item>
-             <item>
-              <widget class="QGroupBox" name="groupBox_15">
-               <property name="minimumSize">
-                <size>
-                 <width>400</width>
-                 <height>0</height>
-                </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>400</width>
-                 <height>16777215</height>
-                </size>
-               </property>
-               <property name="title">
-                <string>更新软件</string>
-               </property>
-               <layout class="QGridLayout" name="gridLayout_6">
-                <item row="1" column="0">
-                 <layout class="QVBoxLayout" name="verticalLayout_12">
-                  <item>
-                   <layout class="QHBoxLayout" name="horizontalLayout_28">
-                    <item>
-                     <widget class="QPushButton" name="btn_SendCmdIap">
-                      <property name="text">
-                       <string>刷写指令</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QPushButton" name="btn_SendCmdIAPBegin">
-                      <property name="text">
-                       <string>刷写</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QPushButton" name="btn_SendDataiap">
-                      <property name="text">
-                       <string>发送</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QPushButton" name="btn_agvStart">
-                      <property name="text">
-                       <string>运行</string>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </item>
-                  <item>
-                   <widget class="QProgressBar" name="Pgb_IAP">
-                    <property name="value">
-                     <number>0</number>
-                    </property>
-                   </widget>
-                  </item>
-                 </layout>
-                </item>
-                <item row="0" column="0">
-                 <layout class="QVBoxLayout" name="verticalLayout_16">
-                  <item>
-                   <widget class="QLabel" name="lab_binname">
-                    <property name="text">
-                     <string>文件名：</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QLabel" name="lab_binsize">
-                    <property name="text">
-                     <string>文件大小：</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <layout class="QHBoxLayout" name="horizontalLayout_29">
-                    <item>
-                     <widget class="QLineEdit" name="lineEdit"/>
-                    </item>
-                    <item>
-                     <widget class="QPushButton" name="pushButton_9">
-                      <property name="text">
-                       <string>选择文件</string>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </item>
-                 </layout>
-                </item>
-                <item row="2" column="0">
+              </item>
+              <item row="2" column="0">
+               <layout class="QVBoxLayout" name="verticalLayout_20">
+                <item>
                  <widget class="QTextEdit" name="txe_carlog">
                   <property name="minimumSize">
                    <size>
@@ -3048,207 +2999,210 @@
                   </property>
                  </widget>
                 </item>
+                <item>
+                 <widget class="QTextEdit" name="textEdit_2"/>
+                </item>
                </layout>
-              </widget>
-             </item>
-            </layout>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item row="2" column="0">
+          <layout class="QHBoxLayout" name="horizontalLayout_42">
+           <item>
+            <widget class="QGroupBox" name="groupBox_17">
+             <property name="minimumSize">
+              <size>
+               <width>900</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>900</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="title">
+              <string>路径设置</string>
+             </property>
+             <layout class="QGridLayout" name="gridLayout_16">
+              <item row="0" column="0">
+               <layout class="QVBoxLayout" name="verticalLayout_14">
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_37">
+                  <item>
+                   <widget class="QPushButton" name="btn_ReadLinpath">
+                    <property name="text">
+                     <string>读取路径</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="btn_WriteLinepath">
+                    <property name="text">
+                     <string>写入路径</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <spacer name="horizontalSpacer_8">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <widget class="QTableView" name="tableView">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </widget>
            </item>
            <item>
-            <layout class="QHBoxLayout" name="horizontalLayout_42">
-             <item>
-              <widget class="QGroupBox" name="groupBox_17">
-               <property name="minimumSize">
-                <size>
-                 <width>900</width>
-                 <height>0</height>
-                </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>900</width>
-                 <height>16777215</height>
-                </size>
-               </property>
-               <property name="title">
-                <string>路径设置</string>
-               </property>
-               <layout class="QGridLayout" name="gridLayout_16">
-                <item row="0" column="0">
-                 <layout class="QVBoxLayout" name="verticalLayout_14">
+            <widget class="QGroupBox" name="groupBox_16">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="title">
+              <string>速度监控</string>
+             </property>
+             <layout class="QGridLayout" name="gridLayout_15">
+              <item row="0" column="0">
+               <layout class="QHBoxLayout" name="horizontalLayout_36" stretch="0,1,40">
+                <item>
+                 <layout class="QVBoxLayout" name="verticalLayout_11">
                   <item>
-                   <layout class="QHBoxLayout" name="horizontalLayout_37">
+                   <layout class="QHBoxLayout" name="horizontalLayout_27">
                     <item>
-                     <widget class="QPushButton" name="btn_ReadLinpath">
+                     <widget class="QPushButton" name="btn_ReadLinpath_2">
                       <property name="text">
-                       <string>读取路径</string>
+                       <string>读取速度</string>
                       </property>
                      </widget>
                     </item>
                     <item>
-                     <widget class="QPushButton" name="btn_WriteLinepath">
+                     <widget class="QPushButton" name="btn_ReadLinpath_3">
                       <property name="text">
-                       <string>写入路径</string>
+                       <string>设置速度</string>
                       </property>
                      </widget>
-                    </item>
-                    <item>
-                     <spacer name="horizontalSpacer_8">
-                      <property name="orientation">
-                       <enum>Qt::Horizontal</enum>
-                      </property>
-                      <property name="sizeHint" stdset="0">
-                       <size>
-                        <width>40</width>
-                        <height>20</height>
-                       </size>
-                      </property>
-                     </spacer>
                     </item>
                    </layout>
                   </item>
                   <item>
-                   <widget class="QTableView" name="tableView">
-                    <property name="minimumSize">
-                     <size>
-                      <width>0</width>
-                      <height>0</height>
-                     </size>
-                    </property>
-                   </widget>
+                   <widget class="QTableView" name="tableView_2"/>
                   </item>
                  </layout>
                 </item>
-               </layout>
-              </widget>
-             </item>
-             <item>
-              <widget class="QGroupBox" name="groupBox_16">
-               <property name="maximumSize">
-                <size>
-                 <width>16777215</width>
-                 <height>16777215</height>
-                </size>
-               </property>
-               <property name="title">
-                <string>速度监控</string>
-               </property>
-               <layout class="QGridLayout" name="gridLayout_15">
-                <item row="0" column="0">
-                 <layout class="QHBoxLayout" name="horizontalLayout_36" stretch="0,1,40">
+                <item>
+                 <layout class="QVBoxLayout" name="verticalLayout_13">
                   <item>
-                   <layout class="QVBoxLayout" name="verticalLayout_11">
+                   <layout class="QHBoxLayout" name="horizontalLayout_33">
                     <item>
-                     <layout class="QHBoxLayout" name="horizontalLayout_27">
-                      <item>
-                       <widget class="QPushButton" name="btn_ReadLinpath_2">
-                        <property name="text">
-                         <string>读取速度</string>
-                        </property>
-                       </widget>
-                      </item>
-                      <item>
-                       <widget class="QPushButton" name="btn_ReadLinpath_3">
-                        <property name="text">
-                         <string>设置速度</string>
-                        </property>
-                       </widget>
-                      </item>
-                     </layout>
-                    </item>
-                    <item>
-                     <widget class="QTableView" name="tableView_2"/>
-                    </item>
-                   </layout>
-                  </item>
-                  <item>
-                   <layout class="QVBoxLayout" name="verticalLayout_13">
-                    <item>
-                     <layout class="QHBoxLayout" name="horizontalLayout_33">
-                      <item>
-                       <widget class="QLabel" name="label_53">
-                        <property name="text">
-                         <string>P</string>
-                        </property>
-                       </widget>
-                      </item>
-                      <item>
-                       <widget class="QLineEdit" name="lineEdit_2"/>
-                      </item>
-                     </layout>
-                    </item>
-                    <item>
-                     <layout class="QHBoxLayout" name="horizontalLayout_34">
-                      <item>
-                       <widget class="QLabel" name="label_58">
-                        <property name="text">
-                         <string>I</string>
-                        </property>
-                       </widget>
-                      </item>
-                      <item>
-                       <widget class="QLineEdit" name="lineEdit_3"/>
-                      </item>
-                     </layout>
-                    </item>
-                    <item>
-                     <layout class="QHBoxLayout" name="horizontalLayout_35">
-                      <item>
-                       <widget class="QLabel" name="label_59">
-                        <property name="text">
-                         <string>D</string>
-                        </property>
-                       </widget>
-                      </item>
-                      <item>
-                       <widget class="QLineEdit" name="lineEdit_4"/>
-                      </item>
-                     </layout>
-                    </item>
-                    <item>
-                     <widget class="QPushButton" name="pushButton_13">
+                     <widget class="QLabel" name="label_53">
                       <property name="text">
-                       <string>读取</string>
+                       <string>P</string>
                       </property>
                      </widget>
                     </item>
                     <item>
-                     <widget class="QPushButton" name="pushButton_14">
-                      <property name="text">
-                       <string>设置</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <spacer name="verticalSpacer_2">
-                      <property name="orientation">
-                       <enum>Qt::Vertical</enum>
-                      </property>
-                      <property name="sizeHint" stdset="0">
-                       <size>
-                        <width>20</width>
-                        <height>40</height>
-                       </size>
-                      </property>
-                     </spacer>
+                     <widget class="QLineEdit" name="lineEdit_2"/>
                     </item>
                    </layout>
                   </item>
                   <item>
-                   <widget class="QGraphicsView" name="graphicsView_2">
-                    <property name="minimumSize">
-                     <size>
-                      <width>0</width>
-                      <height>400</height>
-                     </size>
+                   <layout class="QHBoxLayout" name="horizontalLayout_34">
+                    <item>
+                     <widget class="QLabel" name="label_58">
+                      <property name="text">
+                       <string>I</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLineEdit" name="lineEdit_3"/>
+                    </item>
+                   </layout>
+                  </item>
+                  <item>
+                   <layout class="QHBoxLayout" name="horizontalLayout_35">
+                    <item>
+                     <widget class="QLabel" name="label_59">
+                      <property name="text">
+                       <string>D</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLineEdit" name="lineEdit_4"/>
+                    </item>
+                   </layout>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="pushButton_13">
+                    <property name="text">
+                     <string>读取</string>
                     </property>
                    </widget>
                   </item>
+                  <item>
+                   <widget class="QPushButton" name="pushButton_14">
+                    <property name="text">
+                     <string>设置</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <spacer name="verticalSpacer_2">
+                    <property name="orientation">
+                     <enum>Qt::Vertical</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>20</width>
+                      <height>40</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
                  </layout>
                 </item>
+                <item>
+                 <widget class="QGraphicsView" name="graphicsView_2">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>400</height>
+                   </size>
+                  </property>
+                 </widget>
+                </item>
                </layout>
-              </widget>
-             </item>
-            </layout>
+              </item>
+             </layout>
+            </widget>
            </item>
           </layout>
          </item>
@@ -3275,6 +3229,11 @@
         <attribute name="title">
          <string>地图</string>
         </attribute>
+        <layout class="QGridLayout" name="gridLayout_22">
+         <item row="0" column="0">
+          <widget class="QWidget" name="widget" native="true"/>
+         </item>
+        </layout>
        </widget>
       </widget>
      </item>

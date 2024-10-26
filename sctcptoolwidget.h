@@ -157,6 +157,8 @@ private slots:
 
     void on_actionNew_clicked();
 
+    void on_btn_about_clicked();
+
 protected:
 
 void closeEvent(QCloseEvent *event);

@@ -54,6 +54,7 @@ void MyCarConnnect::run()
             {
                 if(m_autoRwParam == 1)
                 {
+                    step = 0;
                     emit myThreadSignal(tr("当前步骤%1  发送查询指令").arg(step));
                     type=1;
                     command = 0x31;
@@ -361,7 +362,7 @@ void MyCarConnnect::run()
                     msleep(1000);
                     break;
                 }
-                msleep(10);
+                //msleep(10);
             }
         }
     }

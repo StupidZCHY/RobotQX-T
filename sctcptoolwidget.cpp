@@ -170,21 +170,21 @@ SCTcpToolWidget::SCTcpToolWidget(QWidget *parent) :
 
 
 
-    connect(ui->actionNew, &QPushButton::clicked, this, &SCTcpToolWidget::slotActNew);  //新建图
-    connect(ui->actionOpen, &QPushButton::clicked, this, &SCTcpToolWidget::slotActOpen);   //打开图
-    connect(ui->actionSave, &QPushButton::clicked, this, &SCTcpToolWidget::slotActSave);   //保存图
-    connect(ui->actionSaveAs, &QPushButton::clicked, this, &SCTcpToolWidget::slotActSaveAs);//保存为
-    connect(ui->actionExImage, &QPushButton::clicked, this, &SCTcpToolWidget::slotActPrintImage); //导出图片
-    connect(ui->actionExPDF, &QPushButton::clicked, this, &SCTcpToolWidget::slotActPrintPDF);  //导出pdf
+//    connect(ui->actionNew, &QPushButton::clicked, this, &SCTcpToolWidget::slotActNew);  //新建图
+//    connect(ui->actionOpen, &QPushButton::clicked, this, &SCTcpToolWidget::slotActOpen);   //打开图
+//    connect(ui->actionSave, &QPushButton::clicked, this, &SCTcpToolWidget::slotActSave);   //保存图
+//    connect(ui->actionSaveAs, &QPushButton::clicked, this, &SCTcpToolWidget::slotActSaveAs);//保存为
+//    connect(ui->actionExImage, &QPushButton::clicked, this, &SCTcpToolWidget::slotActPrintImage); //导出图片
+//    connect(ui->actionExPDF, &QPushButton::clicked, this, &SCTcpToolWidget::slotActPrintPDF);  //导出pdf
 
-    connect(ui->actionLight, &QPushButton::clicked, this, &SCTcpToolWidget::slotActLight); //明亮模式
-    connect(ui->actionDark, &QPushButton::clicked, this, &SCTcpToolWidget::slotActDark);   //暗黑模式
+//    connect(ui->actionLight, &QPushButton::clicked, this, &SCTcpToolWidget::slotActLight); //明亮模式
+//    connect(ui->actionDark, &QPushButton::clicked, this, &SCTcpToolWidget::slotActDark);   //暗黑模式
 
-    //调整栅格大小
-    connect(ui->action1_pixel, &QPushButton::clicked, this, &SCTcpToolWidget::slotAct1Pixel);
-    connect(ui->action2_pixel, &QPushButton::clicked, this, &SCTcpToolWidget::slotAct2Pixel);
-    connect(ui->action5_pixel, &QPushButton::clicked, this, &SCTcpToolWidget::slotAct5Pixel);
-    connect(ui->action10_pixel, &QPushButton::clicked, this, &SCTcpToolWidget::slotAct10Pixel);
+//    //调整栅格大小
+//    connect(ui->action1_pixel, &QPushButton::clicked, this, &SCTcpToolWidget::slotAct1Pixel);
+//    connect(ui->action2_pixel, &QPushButton::clicked, this, &SCTcpToolWidget::slotAct2Pixel);
+//    connect(ui->action5_pixel, &QPushButton::clicked, this, &SCTcpToolWidget::slotAct5Pixel);
+//    connect(ui->action10_pixel, &QPushButton::clicked, this, &SCTcpToolWidget::slotAct10Pixel);
 
     itemDockWidgetInit();  //读取样式文件 并设置样式，连接按钮和槽函数
     tabWidgetInit();        //窗口选中被改变是    窗口点击关闭时
@@ -205,6 +205,11 @@ void SCTcpToolWidget::SlotRevOneMessage(bool flag ,
 {
     IapSendData1->SetOneMessage(flag,command,totaldat,length,mtime);
 
+    ui->textEdit_2->append(QString(totaldat));
+    if(totaldat.contains(0x18))
+    {
+        ui->textEdit_2->append("iap失败");
+    }
     if(command == 0xb2)//读取小车得状态
     {
         ui->lab_carcurrentpos->setText(tr("当前卡号：%1").arg(totaldat.at(0 )));
@@ -1373,7 +1378,7 @@ void SCTcpToolWidget::on_btn_SendCmdIap_clicked()
     QFileInfo fileInfo(ui->lineEdit->text());
     QString fileName = fileInfo.fileName(); // 获取文件名
     qint64 fileSize = fileInfo.size(); // 获取文件大小（字节）
-
+    //fileSize = 0;
     //报头数据类型.
     int number = 7;
     int sendCommand = 0x79;
@@ -1381,10 +1386,10 @@ void SCTcpToolWidget::on_btn_SendCmdIap_clicked()
     sendData[0] = 'I';
     sendData[1] = 'A';
     sendData[2] = 'P';
-    sendData[3]= (uchar)((fileSize &0xff000000 )>>24);
-    sendData[4]= (uchar)((fileSize &0x00ff0000 )>>16);
-    sendData[5]= (uchar)((fileSize &0x0000ff00 )>>8);
-    sendData[6]= (uchar)(fileSize &0x000000ff);
+    sendData[3]= (uint8_t)((fileSize &0xff000000 )>>24);
+    sendData[4]= (uint8_t)((fileSize &0x00ff0000 )>>16);
+    sendData[5]= (uint8_t)((fileSize &0x0000ff00 )>>8);
+    sendData[6]= (uint8_t)(fileSize &0x000000ff);
     _carMessage->SendOneMessage(1,sendCommand, sendData,number);
 }
 
@@ -1456,6 +1461,16 @@ void SCTcpToolWidget::on_btn_agvStart_clicked()
     QByteArray sendData(number,0) ;
     sendData[0] = '3';
     _carMessage->SendOneMessage(0,0, sendData,number);
+}
+
+//终止更新
+void SCTcpToolWidget::on_btn_about_clicked()
+{
+    int number = 1;
+    QByteArray sendData(number,0) ;
+    sendData[0] = 'a';
+    _carMessage->SendOneMessage(0,0, sendData,number);
+    IapSendData1->setMode(1);
 }
 
 void SCTcpToolWidget::on_btn_setES_clicked()

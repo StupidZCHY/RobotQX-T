@@ -13,7 +13,7 @@ MRectObject::~MRectObject()
 
 QRectF MRectObject::boundingRect() const
 {
-    return QRectF(-10,-10,20,20);
+    return QRectF(-10,-10,200,200);
 }
 
 void MRectObject::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)

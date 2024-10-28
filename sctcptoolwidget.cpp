@@ -21,6 +21,7 @@
 
 #include <QtMath>
 #include <QMessageBox>
+#include <QMenuBar>
 
 #include "carmessage.h"
 using namespace std;
@@ -170,21 +171,35 @@ SCTcpToolWidget::SCTcpToolWidget(QWidget *parent) :
 
 
 
-//    connect(ui->actionNew, &QPushButton::clicked, this, &SCTcpToolWidget::slotActNew);  //新建图
-//    connect(ui->actionOpen, &QPushButton::clicked, this, &SCTcpToolWidget::slotActOpen);   //打开图
-//    connect(ui->actionSave, &QPushButton::clicked, this, &SCTcpToolWidget::slotActSave);   //保存图
-//    connect(ui->actionSaveAs, &QPushButton::clicked, this, &SCTcpToolWidget::slotActSaveAs);//保存为
-//    connect(ui->actionExImage, &QPushButton::clicked, this, &SCTcpToolWidget::slotActPrintImage); //导出图片
-//    connect(ui->actionExPDF, &QPushButton::clicked, this, &SCTcpToolWidget::slotActPrintPDF);  //导出pdf
+    connect(ui->actionNew, &QPushButton::clicked, this, &SCTcpToolWidget::slotActNew);  //新建图
+    connect(ui->actionOpen, &QPushButton::clicked, this, &SCTcpToolWidget::slotActOpen);   //打开图
+    connect(ui->actionSave, &QPushButton::clicked, this, &SCTcpToolWidget::slotActSave);   //保存图
+    connect(ui->actionSaveAs, &QPushButton::clicked, this, &SCTcpToolWidget::slotActSaveAs);//保存为
+    connect(ui->actionExImage, &QPushButton::clicked, this, &SCTcpToolWidget::slotActPrintImage); //导出图片
+    connect(ui->actionExPDF, &QPushButton::clicked, this, &SCTcpToolWidget::slotActPrintPDF);  //导出pdf
 
-//    connect(ui->actionLight, &QPushButton::clicked, this, &SCTcpToolWidget::slotActLight); //明亮模式
-//    connect(ui->actionDark, &QPushButton::clicked, this, &SCTcpToolWidget::slotActDark);   //暗黑模式
+    connect(ui->actionLight, &QPushButton::clicked, this, &SCTcpToolWidget::slotActLight); //明亮模式
+    connect(ui->actionDark, &QPushButton::clicked, this, &SCTcpToolWidget::slotActDark);   //暗黑模式
 
-//    //调整栅格大小
-//    connect(ui->action1_pixel, &QPushButton::clicked, this, &SCTcpToolWidget::slotAct1Pixel);
-//    connect(ui->action2_pixel, &QPushButton::clicked, this, &SCTcpToolWidget::slotAct2Pixel);
-//    connect(ui->action5_pixel, &QPushButton::clicked, this, &SCTcpToolWidget::slotAct5Pixel);
-//    connect(ui->action10_pixel, &QPushButton::clicked, this, &SCTcpToolWidget::slotAct10Pixel);
+    //调整栅格大小
+    connect(ui->action1_pixel, &QPushButton::clicked, this, &SCTcpToolWidget::slotAct1Pixel);
+    connect(ui->action2_pixel, &QPushButton::clicked, this, &SCTcpToolWidget::slotAct2Pixel);
+    connect(ui->action5_pixel, &QPushButton::clicked, this, &SCTcpToolWidget::slotAct5Pixel);
+    connect(ui->action10_pixel, &QPushButton::clicked, this, &SCTcpToolWidget::slotAct10Pixel);
+
+    //创建菜单栏
+        QMenuBar* menuBar = new QMenuBar(this);
+    //创建菜单（用addMenu方法添加入菜单栏）
+        QMenu* filename = menuBar->addMenu(QStringLiteral("文件(&F)"));
+    //创建菜单项
+        QAction* openfile = new QAction(QStringLiteral("打开文件(&O)"));
+        QAction* opendlg = new QAction(QStringLiteral("打开对话框(&D)"));
+    //给菜单项添入图标
+        openfile->setIcon(QIcon(":/D:/image/Luffy.png"));
+        opendlg->setIcon(QIcon(":/D:/image/LuffyQ.png"));
+    //用addAction加入菜单项
+        filename->addAction(opendlg);
+        filename->addAction(openfile);
 
     itemDockWidgetInit();  //读取样式文件 并设置样式，连接按钮和槽函数
     tabWidgetInit();        //窗口选中被改变是    窗口点击关闭时
@@ -1378,7 +1393,7 @@ void SCTcpToolWidget::on_btn_SendCmdIap_clicked()
     QFileInfo fileInfo(ui->lineEdit->text());
     QString fileName = fileInfo.fileName(); // 获取文件名
     qint64 fileSize = fileInfo.size(); // 获取文件大小（字节）
-    //fileSize = 0;
+    fileSize = 0;
     //报头数据类型.
     int number = 7;
     int sendCommand = 0x79;
@@ -1548,7 +1563,7 @@ void SCTcpToolWidget::on_btn_mapReduce_clicked()
 //样式初始化
 void SCTcpToolWidget::itemDockWidgetInit()
 {
-    //读取样式文件
+//    //读取样式文件
 //    QFile file(":/Resources/qss/style.qss");
 //    if(!file.open(QFile::ReadOnly)) return;
 //    QTextStream textStream(&file);
@@ -1565,15 +1580,15 @@ void SCTcpToolWidget::itemDockWidgetInit()
 //窗口初始化
 void SCTcpToolWidget::tabWidgetInit()
 {
-    ui->tabWidget->setTabsClosable(true);
+    ui->tbW_map->setTabsClosable(true);
 
-    connect(ui->tabWidget, &QTabWidget::currentChanged, this, [=](int index)   //选中窗口变化时
+    connect(ui->tbW_map, &QTabWidget::currentChanged, this, [=](int index)   //选中窗口变化时
     {
         Q_UNUSED(index);
-        curView = dynamic_cast<MBaseView *>(ui->tabWidget->currentWidget());//获取当前选中窗口
+        curView = dynamic_cast<MBaseView *>(ui->tbW_map->currentWidget());//获取当前选中窗口
     });
 
-    connect(ui->tabWidget, &QTabWidget::tabCloseRequested, this, [=](int index){  //关闭窗口时提示
+    connect(ui->tbW_map, &QTabWidget::tabCloseRequested, this, [=](int index){  //关闭窗口时提示
         QMessageBox msgBox;
         msgBox.setText("The document has changed. Whether to save the changes?");//提示信息
         //创建三个按钮 保存 不保存  取消
@@ -1587,10 +1602,10 @@ void SCTcpToolWidget::tabWidgetInit()
         if(msgBox.clickedButton() == save)
         {
             slotActSave();
-            ui->tabWidget->removeTab(index);
+            ui->tbW_map->removeTab(index);
         }
         else if (msgBox.clickedButton() == unsave) {
-            ui->tabWidget->removeTab(index);
+            ui->tbW_map->removeTab(index);
         }
     });
 
@@ -1964,7 +1979,7 @@ void SCTcpToolWidget::openPage()
 //添加文本按钮槽函数
 void SCTcpToolWidget::slotBtnText()
 {
-    if(ui->tabWidget->count() == 0) return;
+    if(ui->tbW_map->count() == 0) return;
     MTextObject *item = new MTextObject();
     item->setPos(curView->gEndPoint);
     curView->scene()->addItem(item);
@@ -1972,13 +1987,13 @@ void SCTcpToolWidget::slotBtnText()
 //添加直线按钮槽函数
 void SCTcpToolWidget::slotBtnLine()
 {
-    if(ui->tabWidget->count() == 0) return;
+    if(ui->tbW_map->count() == 0) return;
     curView->enbaleDrawLine(true);
 }
 //添加矩形按钮槽函数
 void SCTcpToolWidget::slotBtnRect()
 {
-    if(ui->tabWidget->count() == 0) return;
+    if(ui->tbW_map->count() == 0) return;
     MBaseObject *item = new MRectObject();
     item->setPos(curView->gEndPoint);
     curView->scene()->addItem(item);
@@ -1986,7 +2001,7 @@ void SCTcpToolWidget::slotBtnRect()
 //添加椭圆按钮槽函数
 void SCTcpToolWidget::slotBtnEllipse()
 {
-    if(ui->tabWidget->count() == 0) return;
+    if(ui->tbW_map->count() == 0) return;
     MBaseObject *item = new MEllipseObject();
     item->setPos(curView->gEndPoint);
     curView->scene()->addItem(item);
@@ -1999,10 +2014,11 @@ void SCTcpToolWidget::slotActNew()
     count ++;
 
     MBaseScene *pScene = new MBaseScene(this);   //继承graph得类
-    pScene->setSceneRect(-297*3/2, -210*3/2, 297*3, 210*3);
+    //pScene->setSceneRect(-297*3/2, -210*3/2, 297*3, 210*3);
+    pScene->setSceneRect(-(ui->tbW_map->width()/2), -(ui->tbW_map->height()/2), ui->tbW_map->width(), ui->tbW_map->height());
     MBaseView *view = new MBaseView(pScene);
-    ui->tabWidget->addTab(view, text);
-    ui->tabWidget->setCurrentWidget(view);
+    ui->tbW_map->addTab(view, text);
+    ui->tbW_map->setCurrentWidget(view);
     curView = view;//标记当前选中窗口
 }
 //打开文件
@@ -2013,9 +2029,9 @@ void SCTcpToolWidget::slotActOpen()
 //保存文件
 void SCTcpToolWidget::slotActSave()
 {
-    if(ui->tabWidget->count() == 0) return;
-    int index = ui->tabWidget->currentIndex();
-    QString name = ui->tabWidget->tabText(index) + ".xml";
+    if(ui->tbW_map->count() == 0) return;
+    int index = ui->tbW_map->currentIndex();
+    QString name = ui->tbW_map->tabText(index) + ".xml";
     QString pathname = defaultXmlPath + name;
     QString fileName;
     if(!xmlIsExist(name))
@@ -2024,7 +2040,7 @@ void SCTcpToolWidget::slotActSave()
                                                         pathname,"Xml(*.xml)");
         qDebug() << fileName;
         QString title = fileName.split('/').last().split('.').first();
-        ui->tabWidget->setTabText(index, title);
+        ui->tbW_map->setTabText(index, title);
     }
     else {
         fileName = pathname;
@@ -2035,9 +2051,9 @@ void SCTcpToolWidget::slotActSave()
 //保存成其他类型
 void SCTcpToolWidget::slotActSaveAs()
 {
-    if(ui->tabWidget->count() == 0) return;
-    int index = ui->tabWidget->currentIndex();
-    QString name = ui->tabWidget->tabText(index) + ".xml";
+    if(ui->tbW_map->count() == 0) return;
+    int index = ui->tbW_map->currentIndex();
+    QString name = ui->tbW_map->tabText(index) + ".xml";
     QString pathname = defaultXmlPath + name;
     QString fileName;
 
@@ -2045,16 +2061,16 @@ void SCTcpToolWidget::slotActSaveAs()
                                                         pathname,"Xml(*.xml)");
 
     QString title = fileName.split('/').last().split('.').first();
-    ui->tabWidget->setTabText(index, title);
+    ui->tbW_map->setTabText(index, title);
 
     savePage(fileName);
 }
 //保存成图片
 void SCTcpToolWidget::slotActPrintImage()
 {
-    if(ui->tabWidget->count() == 0) return;
-    int index = ui->tabWidget->currentIndex();
-    QString name = ui->tabWidget->tabText(index) + ".png";
+    if(ui->tbW_map->count() == 0) return;
+    int index = ui->tbW_map->currentIndex();
+    QString name = ui->tbW_map->tabText(index) + ".png";
     QString pathname = defaultXmlPath + name;
     QString fileName;
 
@@ -2086,9 +2102,9 @@ void SCTcpToolWidget::slotActPrintImage()
 //保存为pdf
 void SCTcpToolWidget::slotActPrintPDF()
 {
-    if(ui->tabWidget->count() == 0) return;
-    int index = ui->tabWidget->currentIndex();
-    QString name = ui->tabWidget->tabText(index) + ".pdf";
+    if(ui->tbW_map->count() == 0) return;
+    int index = ui->tbW_map->currentIndex();
+    QString name = ui->tbW_map->tabText(index) + ".pdf";
     QString pathname = defaultXmlPath + name;
     QString fileName;
 
@@ -2173,17 +2189,4 @@ void SCTcpToolWidget::slotAct10Pixel()
     MBaseObject::gMoveOffset = 10;
 }
 
-void SCTcpToolWidget::on_actionNew_clicked()
-{
-    static int count = 0;
-    QString text = "untitled_" + QString::number(count);//加后缀序号命名
-    count ++;
 
-    MBaseScene *pScene = new MBaseScene(this);   //继承graph得类
-    pScene->setSceneRect(-297*3/2, -210*3/2, 297*2, 210*2);
-    MBaseView *view = new MBaseView(pScene);
-    ui->tabWidget->addTab(view, text);
-    ui->tabWidget->setCurrentWidget(view);
-    curView = view;//标记当前选中窗口
-
-}

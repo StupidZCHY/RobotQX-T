@@ -52,6 +52,7 @@ void MyCarConnnect::run()
         {
             while(true)
             {
+                 emit myThreadSignal(tr("当前步骤%1  等待发送查询指令").arg(step));
                 if(m_autoRwParam == 1)
                 {
                     step = 0;
@@ -75,16 +76,16 @@ void MyCarConnnect::run()
                 {
                     break;
                 }
-                //msleep(1000);
+                msleep(1000);
             }
         }
         else if(m_mode == 2)
         {
             while(true)
             {
-
                 if(step == 0)   //第一步
                 {
+                    //datStream1.clear();
                     emit myThreadSignal(tr("当前步骤%1  准备打开文件").arg(step));
                     //打开文件
                     QFile file(m_FilePath);

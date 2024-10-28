@@ -129,6 +129,7 @@ private slots:
     void on_btn_clearError_clicked();
     void on_btn_setActionNum_clicked();
 
+    void on_btn_about_clicked();
     void on_btn_mapAmplify_clicked();
 
     void on_btn_mapReduce_clicked();
@@ -155,9 +156,8 @@ private slots:
     void slotAct5Pixel(void);
     void slotAct10Pixel(void);
 
-    void on_actionNew_clicked();
 
-    void on_btn_about_clicked();
+
 
 protected:
 

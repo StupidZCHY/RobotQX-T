@@ -19,19 +19,20 @@ MBaseScene::~MBaseScene()
 {
 
 }
-
+//按键按下事件
 void MBaseScene::keyPressEvent(QKeyEvent *event)
 {
     QGraphicsScene::keyPressEvent(event);
 }
-
+//按键释放事件
 void MBaseScene::keyReleaseEvent(QKeyEvent *event)
 {
-    if(event->key() == Qt::Key_Delete)
+    if(event->key() == Qt::Key_Delete)//删除按钮释放时  删除选中图元
     {
         QList<QGraphicsItem *> list = this->selectedItems();
         foreach(QGraphicsItem *item, list)
         {
+
             this->removeItem(item);
         }
     }
@@ -39,7 +40,7 @@ void MBaseScene::keyReleaseEvent(QKeyEvent *event)
         QGraphicsScene::keyReleaseEvent(event);
     }
 }
-
+//绘制背景颜色
 void MBaseScene::drawBackground(QPainter *painter, const QRectF &rect)
 {
     painter->setBrush(MBaseScene::gBackgroundColor);
@@ -79,17 +80,17 @@ void MBaseScene::drawBackground(QPainter *painter, const QRectF &rect)
     painter->setPen(MBaseScene::gForegroundColorDark);
     painter->drawLines(dark_lines);
 }
-
+//鼠标移动事件
 void MBaseScene::mouseMoveEvent(QGraphicsSceneMouseEvent *mouseEvent)
 {
     QGraphicsScene::mouseMoveEvent(mouseEvent);
 }
-
+//鼠标按下事件
 void MBaseScene::mousePressEvent(QGraphicsSceneMouseEvent *mouseEvent)
 {
     QGraphicsScene::mousePressEvent(mouseEvent);
 }
-
+//鼠标释放事件
 void MBaseScene::mouseReleaseEvent(QGraphicsSceneMouseEvent *mouseEvent)
 {
     QGraphicsScene::mouseReleaseEvent(mouseEvent);

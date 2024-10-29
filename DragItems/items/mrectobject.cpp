@@ -13,7 +13,7 @@ MRectObject::~MRectObject()
 
 QRectF MRectObject::boundingRect() const
 {
-    return QRectF(-10,-10,200,200);
+    return QRectF(-10,-10,10    ,20); //矩形得大小
 }
 
 void MRectObject::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)

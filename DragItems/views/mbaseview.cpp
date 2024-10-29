@@ -8,7 +8,7 @@ MBaseView::MBaseView(QWidget *parent)
     : QGraphicsView(parent)
     , IS_MOVE(false)
     , IS_MOVED(false)
-    , mDefaultBkColor(QColor(218,218,218))
+    , mDefaultBkColor(QColor(218,0,0))
     , bDrawLine(false)
 
 {
@@ -28,6 +28,7 @@ MBaseView::MBaseView(QGraphicsScene *scene, QWidget *parent)
 
 void MBaseView::init()
 {
+    //设置反走样
     this->setRenderHints(QPainter::Antialiasing | QPainter::SmoothPixmapTransform | QPainter::TextAntialiasing
                          | QPainter::HighQualityAntialiasing );//| QPainter::LosslessImageRendering
     this->setTransformationAnchor(QGraphicsView::AnchorUnderMouse);
@@ -41,7 +42,7 @@ void MBaseView::init()
     pTimer->setInterval(150);
     connect(pTimer, &QTimer::timeout, this, [=](){
         IS_MOVE = true;
-        this->setCursor(Qt::OpenHandCursor);
+        this->setCursor(Qt::OpenHandCursor);//设置鼠标样式  手掌
         pTimer->stop();
     });
 
@@ -142,12 +143,14 @@ void MBaseView::mousePressEvent(QMouseEvent *event)
     }
 }
 
+
+//鼠标释放事件
 void MBaseView::mouseReleaseEvent(QMouseEvent *event)
 {
-    this->setCursor(Qt::ArrowCursor);
-    if(event->button() == Qt::RightButton)
+    this->setCursor(Qt::ArrowCursor);//设置鼠标样式 正常鼠标状态
+    if(event->button() == Qt::RightButton)//右键按钮释放
     {
-        if(bDrawLine && !IS_MOVE) /* 右键取消十字线 */
+        if(bDrawLine && !IS_MOVE) /* 右键取消十字线 */   //正在画线时  取消画线
         {
             bDrawLine = false;
             pXLine->setVisible(false);
@@ -166,8 +169,8 @@ void MBaseView::mouseReleaseEvent(QMouseEvent *event)
         IS_MOVE = false;
 
     }
-    else if (event->button() == Qt::LeftButton) {
-        if(bDrawLine && (!bIsDrawingLine))
+    else if (event->button() == Qt::LeftButton) {//鼠标左键释放
+        if(bDrawLine && (!bIsDrawingLine))      //正在画线时  释放 绘制一条直线
         {
             bIsDrawingLine = true; /* 左键点击开始画线 */
             MLineObject *item = new MLineObject();
@@ -195,12 +198,12 @@ void MBaseView::mouseReleaseEvent(QMouseEvent *event)
     }
     QGraphicsView::mouseReleaseEvent(event);
 }
-
+//滚轮上下 放大缩小
 void MBaseView::wheelEvent(QWheelEvent *event)
 {
     event->delta() > 0 ? scale(1.1,1.1) : scale(0.9,0.9);
 }
-
+//鼠标进入
 void MBaseView::enterEvent(QEvent *event)
 {
     Q_UNUSED(event);
@@ -208,7 +211,7 @@ void MBaseView::enterEvent(QEvent *event)
     pXLine->setVisible(true);
     pYLine->setVisible(true);
 }
-
+//鼠标离开
 void MBaseView::leaveEvent(QEvent *event)
 {
     Q_UNUSED(event);
@@ -216,7 +219,7 @@ void MBaseView::leaveEvent(QEvent *event)
     pXLine->setVisible(false);
     pYLine->setVisible(false);
 }
-
+//修改槽函数
 void MBaseView::slotChangeBkColor()
 {
     mDefaultBkColor = QColorDialog::getColor(Qt::white, this);
